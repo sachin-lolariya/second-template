@@ -1,57 +1,46 @@
-# OH! STUDIO — Bold, Tactile & Playful Creative Agency Template
+# OH! STUDIO — Boutique Creative Studio & Art Direction
 
-An Awwwards-winning creative agency website template designed and coded with a bold, tactile, and playful design system. Built with semantic HTML5, modern CSS3 (Webflow Client-First architecture & tokenized CSS variables), and vanilla JavaScript powered by GSAP 3, ScrollTrigger, and Lenis Smooth Scroll.
-
-![OH! STUDIO Preview](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=85)
+An Awwwards-caliber, bold, editorial, and tactile Boutique Creative Studio website template for **OH! STUDIO** built with a strict two-tone color system, mixed typography pairings, and kinetic GSAP 3 + Lenis smooth scroll choreography.
 
 ---
 
-## ⚡ Tech Stack & Architecture
+### 🎨 Two-Tone Editorial Design System
+
+- **Warm Cream Canvas:** `#FFF0DC`
+- **Deep Burgundy Brand / Ink:** `#790B13`
+- **Deep Oxblood (Hover & Dark Accents):** `#4D060B`
+- **Soft Cream Tint (Subtle Surfaces):** `#F7E3C6`
+- **Dramatic Section Alternation:** Seamless rhythm alternating between Warm Cream background with Deep Burgundy typography and Deep Burgundy background with Warm Cream typography.
+- **Mixed Typography Pairing:**
+  - `Bricolage Grotesque` (800 weight, tight `-0.04em` tracking) for bold display headlines and monumental wordmarks.
+  - `Instrument Serif` (italic) for expressive editorial accent words.
+  - `DM Sans` (400, 500, 700) for crisp body copy and metadata.
+- **Tactile Print Aesthetic:**
+  - Crisp `1.5px solid #790B13` hairline borders and pill tags.
+  - Hard offset drop shadows (`4px 4px 0px #4D060B` on primary buttons).
+  - Subtle 3.5% SVG paper-grain overlay for a heavy cardstock texture.
+
+---
+
+### ⚡ Sections Included
+
+1. **Minimal Editorial Navbar** — Translucent cream bar with 1px burgundy bottom border, bold OH! mark, desktop navigation, and inverted burgundy pill CTA.
+2. **High-Impact Editorial Hero** — Masked line-by-line slide-up headline with italic serif accent, studio descriptor, dual tactile CTAs, and full-width 16:9 showreel frame with scroll-linked scale parallax.
+3. **Inverted Burgundy Marquee Band** — Full-width `#790B13` strip with `#FFF0DC` scrolling uppercase typography.
+4. **Selected Work (Asymmetric Editorial Grid)** — 5 large portfolio cards with scrub parallax thumbnails, category pills, project years, and hover-filling circular arrow buttons.
+5. **Inverted Burgundy Capabilities Section** — Full `#790B13` background with `#FFF0DC` typography detailing 4 core disciplines (Brand Strategy, Visual Identity, Bespoke Webflow/Framer, Liquid GSAP Motion).
+6. **Studio Ethos / Stats Strip** — Large editorial manifesto quote paired with 3 interactive ScrollTrigger counter stats (40+ Brands, 12 Awards, 100% Craft).
+7. **Bold Closing CTA & Monumental Footer** — Inverted burgundy inquiry box, direct email input, global studio clock, and full-bleed edge-to-edge `OH! STUDIO` wordmark.
+
+---
+
+### 🛠️ Tech Stack & Architecture
+
 - **Semantic HTML5** & **Modern CSS3** (CSS Custom Properties, Flexbox, CSS Grid)
-- **Webflow Client-First** class conventions (`section_hero`, `container_large`, `card_project`, `btn_tactile`)
-- **GSAP 3.12.5** + **ScrollTrigger** for choreography, magnetic CTAs, and scroll reveals
-- **Lenis 1.1.18** for buttery smooth scrolling
-- **Web Audio API** synthesized tactile audio engine (click, pop, chime)
+- **Webflow Client-First** modular class architecture
+- **GSAP 3.12.5** + **ScrollTrigger** for narrative motion & magnetic buttons
+- **Lenis 1.1.18** for smooth inertia scrolling
 
 ---
 
-## 🎨 Design System Tokens
-- **Canvas:** `#F7F5F0` (warm off-white paper canvas with subtle 3.5% fractal noise grain)
-- **Ink:** `#121212` (pitch black)
-- **Electric Tangerine:** `#FF5A1F`
-- **Acid Lime:** `#CCFF00`
-- **Cobalt Blue:** `#2962FF`
-- **Soft Lilac:** `#DFC5FE`
-- **Typography:** `Bricolage Grotesque` (800 weight, tight `-0.04em` letter-spacing) & `DM Sans` (400, 500, 700)
-- **Physical Click Physics:**
-  - Default: `box-shadow: 4px 4px 0px #121212`
-  - Hover: `translate(-2px, -2px)` with `box-shadow: 6px 6px 0px #121212`
-  - Active: `translate(4px, 4px)` with `box-shadow: 0px 0px 0px #121212`
-
----
-
-## 🚀 Sections Included
-1. **Floating Pill Navbar** — Responsive navigation with brand badge, sound FX toggle, and CTA pill.
-2. **Playful Tactile Hero** — Massive headline with inline badges, 4 cursor-parallax sticker badges, dual magnetic CTAs, and interactive 4K showreel showcase.
-3. **Angled Kinetic Marquee Ribbon** — Tilted (-1.5deg) seamless infinite marquee.
-4. **Featured Work Grid** — Asymmetric 2-column case study cards with category filter pills and interactive rotating arrows.
-5. **Tactile Services Bento** — 4 color-coded cards with interactive micro-demos (Brand Stamp, Responsive Device Pills, Spring Bounce, Tactile Switch).
-6. **Sprint Process** — 3 oversized numbered cards (`01 Spark`, `02 Craft`, `03 Launch`).
-7. **Client Love** — Speech-bubble testimonial cards with cartoon tails and verified badges.
-8. **High-Impact CTA** — Interactive scope radio pills, work email input, and modal confirmation.
-9. **Giant Edge-to-Edge Footer** — Massive responsive `OH! STUDIO` wordmark and live NYC studio clock.
-
----
-
-## 📦 Local Setup
-Simply open `index.html` in any modern web browser, or run a local server:
-```bash
-# Using Node
-npx serve .
-# Or Python
-python -m http.server 8080
-```
-
----
-
-© 2026 OH! STUDIO. Coded with tactile GSAP & Lenis.
+© 2026 OH! STUDIO ATELIER. All rights reserved.

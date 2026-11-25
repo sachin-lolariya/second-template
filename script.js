@@ -1,146 +1,20 @@
 /**
- * OH! STUDIO — Bold, Tactile & Playful Creative Agency
+ * OH! STUDIO — Strict Two-Tone Editorial Creative Studio
  * GSAP 3, ScrollTrigger & Lenis Smooth Scroll Orchestration
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
-  // Check if reduced motion is preferred
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ==========================================================================
-     1. TACTILE AUDIO SYNTHESIZER (WEB AUDIO API)
-     ========================================================================== */
-  class TactileSoundEngine {
-    constructor() {
-      this.enabled = true;
-      this.ctx = null;
-    }
-
-    init() {
-      if (!this.ctx && (window.AudioContext || window.webkitAudioContext)) {
-        const AudioCtx = window.AudioContext || window.webkitAudioContext;
-        this.ctx = new AudioCtx();
-      }
-      if (this.ctx && this.ctx.state === 'suspended') {
-        this.ctx.resume();
-      }
-    }
-
-    playClick(pitch = 600, duration = 0.04) {
-      if (!this.enabled) return;
-      try {
-        this.init();
-        if (!this.ctx) return;
-        const osc = this.ctx.createOscillator();
-        const gain = this.ctx.createGain();
-
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(pitch, this.ctx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(120, this.ctx.currentTime + duration);
-
-        gain.gain.setValueAtTime(0.12, this.ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
-
-        osc.connect(gain);
-        gain.connect(this.ctx.destination);
-
-        osc.start();
-        osc.stop(this.ctx.currentTime + duration);
-      } catch (e) {
-        // AudioContext silent fail safe
-      }
-    }
-
-    playPop(pitch = 380) {
-      if (!this.enabled) return;
-      try {
-        this.init();
-        if (!this.ctx) return;
-        const osc = this.ctx.createOscillator();
-        const gain = this.ctx.createGain();
-
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(pitch, this.ctx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(80, this.ctx.currentTime + 0.08);
-
-        gain.gain.setValueAtTime(0.18, this.ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.08);
-
-        osc.connect(gain);
-        gain.connect(this.ctx.destination);
-
-        osc.start();
-        osc.stop(this.ctx.currentTime + 0.08);
-      } catch (e) {}
-    }
-
-    playChime() {
-      if (!this.enabled) return;
-      try {
-        this.init();
-        if (!this.ctx) return;
-        [523.25, 659.25, 783.99, 1046.50].forEach((freq, idx) => {
-          setTimeout(() => {
-            const osc = this.ctx.createOscillator();
-            const gain = this.ctx.createGain();
-            osc.type = 'sine';
-            osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
-            gain.gain.setValueAtTime(0.08, this.ctx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.25);
-            osc.connect(gain);
-            gain.connect(this.ctx.destination);
-            osc.start();
-            osc.stop(this.ctx.currentTime + 0.25);
-          }, idx * 60);
-        });
-      } catch (e) {}
-    }
-
-    toggle() {
-      this.enabled = !this.enabled;
-      return this.enabled;
-    }
-  }
-
-  const soundEngine = new TactileSoundEngine();
-
-  // Sound Toggle UI Button
-  const soundToggleBtn = document.getElementById('soundToggle');
-  if (soundToggleBtn) {
-    const onIcon = soundToggleBtn.querySelector('.icon_sound.on');
-    const offIcon = soundToggleBtn.querySelector('.icon_sound.off');
-
-    soundToggleBtn.addEventListener('click', () => {
-      soundEngine.init();
-      const isEnabled = soundEngine.toggle();
-      if (isEnabled) {
-        onIcon.style.display = 'block';
-        offIcon.style.display = 'none';
-        soundToggleBtn.setAttribute('title', 'Sound Effects ON');
-        soundEngine.playPop(500);
-      } else {
-        onIcon.style.display = 'none';
-        offIcon.style.display = 'block';
-        soundToggleBtn.setAttribute('title', 'Sound Effects MUTED');
-      }
-    });
-  }
-
-  // Attach tactile audio to all buttons and links
-  document.querySelectorAll('button, .btn_tactile, .btn_pill, .nav_link, .filter_pill').forEach(el => {
-    el.addEventListener('mousedown', () => soundEngine.playClick(620, 0.04));
-    el.addEventListener('mouseenter', () => soundEngine.playClick(880, 0.02));
-  });
-
-  /* ==========================================================================
-     2. LENIS SMOOTH SCROLL & GSAP TICKER INTEGRATION
+     1. LENIS SMOOTH SCROLL & GSAP TICKER INTEGRATION
      ========================================================================== */
   let lenis = null;
   if (typeof Lenis !== 'undefined' && !prefersReducedMotion) {
     lenis = new Lenis({
-      duration: 1.15,
+      duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       smoothWheel: true,
@@ -166,16 +40,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     3. CUSTOM TACTILE CURSOR
+     2. CUSTOM EDITORIAL CURSOR
      ========================================================================== */
   const cursorDot = document.getElementById('customCursor');
   const cursorFollower = document.getElementById('customCursorFollower');
 
-  if (cursorDot && cursorFollower && window.matchMedia('(pointer: fine)').matches) {
-    const quickDotX = gsap.quickTo(cursorDot, 'x', { duration: 0.05, ease: 'power2.out' });
-    const quickDotY = gsap.quickTo(cursorDot, 'y', { duration: 0.05, ease: 'power2.out' });
-    const quickFollowerX = gsap.quickTo(cursorFollower, 'x', { duration: 0.25, ease: 'power3.out' });
-    const quickFollowerY = gsap.quickTo(cursorFollower, 'y', { duration: 0.25, ease: 'power3.out' });
+  if (cursorDot && cursorFollower && window.matchMedia('(pointer: fine)').matches && typeof gsap !== 'undefined') {
+    const quickDotX = gsap.quickTo(cursorDot, 'x', { duration: 0.06, ease: 'power2.out' });
+    const quickDotY = gsap.quickTo(cursorDot, 'y', { duration: 0.06, ease: 'power2.out' });
+    const quickFollowerX = gsap.quickTo(cursorFollower, 'x', { duration: 0.22, ease: 'power3.out' });
+    const quickFollowerY = gsap.quickTo(cursorFollower, 'y', { duration: 0.22, ease: 'power3.out' });
 
     window.addEventListener('mousemove', (e) => {
       quickDotX(e.clientX);
@@ -184,137 +58,84 @@ document.addEventListener('DOMContentLoaded', () => {
       quickFollowerY(e.clientY);
     });
 
-    // Cursor hover expansion
-    const interactiveTargets = document.querySelectorAll('a, button, input, .card_project, .bento_card, .hero_sticker, .showcase_tab');
-    interactiveTargets.forEach(target => {
-      target.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-      target.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    const hoverTargets = document.querySelectorAll('a, button, input, .card_work, .capability_card, .showcase_frame');
+    hoverTargets.forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
     });
   }
 
   /* ==========================================================================
-     4. BOUNCY HERO ENTRANCE CHOREOGRAPHY
+     3. EDITORIAL HERO REVEAL (MASKED SLIDE-UP + SHOWCASE REVEAL)
      ========================================================================== */
   if (typeof gsap !== 'undefined' && !prefersReducedMotion) {
-    const heroTl = gsap.timeline({ defaults: { ease: 'back.out(1.7)' } });
+    const heroTl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
     // Navbar entrance
     heroTl.from('.navbar_container', {
-      y: -60,
+      y: -50,
       opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out',
+      duration: 0.85,
     });
 
-    // Live status pill
-    heroTl.from('.hero_status_pill', {
-      y: 20,
+    // Top eyebrow tag
+    heroTl.from('.hero_eyebrow_wrap', {
       opacity: 0,
-      scale: 0.85,
-      duration: 0.5,
+      y: 20,
+      duration: 0.6,
     }, '-=0.4');
 
-    // Expressive headline lines & inline badges
-    heroTl.from('.headline_row', {
-      y: 45,
-      opacity: 0,
-      rotation: 1.5,
+    // Masked line-by-line slide-up
+    heroTl.from('.headline_mask .headline_inner', {
+      yPercent: 110,
+      duration: 1.15,
       stagger: 0.12,
-      duration: 0.75,
     }, '-=0.3');
 
-    // Inline pills bounce
-    heroTl.from('.inline_pill', {
-      scale: 0,
-      rotation: -15,
-      stagger: 0.15,
-      duration: 0.6,
-      ease: 'back.out(2.2)',
-    }, '-=0.4');
-
-    // Description & CTA buttons
-    heroTl.from('.hero_description', {
-      y: 20,
+    // Descriptor and buttons
+    heroTl.from('.hero_descriptor', {
       opacity: 0,
-      duration: 0.6,
-      ease: 'power2.out',
-    }, '-=0.3');
+      y: 25,
+      duration: 0.7,
+      ease: 'power3.out',
+    }, '-=0.5');
 
     heroTl.from('.hero_cta_group .btn_tactile', {
-      scale: 0.8,
       opacity: 0,
       y: 20,
       stagger: 0.1,
-      duration: 0.5,
-    }, '-=0.4');
-
-    // Floating Stickers Pop
-    heroTl.from('.hero_sticker', {
-      scale: 0,
-      opacity: 0,
-      rotation: 'random(-25, 25)',
-      stagger: 0.1,
-      duration: 0.65,
-      ease: 'back.out(2)',
-    }, '-=0.3');
-
-    // Showcase Card Reveal
-    heroTl.from('#heroShowcase', {
-      y: 60,
-      opacity: 0,
-      scale: 0.96,
-      duration: 0.9,
+      duration: 0.6,
       ease: 'power3.out',
     }, '-=0.4');
-  }
 
-  /* ==========================================================================
-     5. INTERACTIVE STICKER PARALLAX (gsap.quickTo)
-     ========================================================================== */
-  const stickers = document.querySelectorAll('.hero_sticker');
-  if (stickers.length > 0 && typeof gsap !== 'undefined' && !prefersReducedMotion) {
-    const stickerAnims = Array.from(stickers).map((sticker) => {
-      const speed = parseFloat(sticker.dataset.parallax || '0.05');
-      return {
-        el: sticker,
-        speed: speed,
-        xTo: gsap.quickTo(sticker, 'x', { duration: 0.45, ease: 'power2.out' }),
-        yTo: gsap.quickTo(sticker, 'y', { duration: 0.45, ease: 'power2.out' }),
-        rotTo: gsap.quickTo(sticker, 'rotation', { duration: 0.5, ease: 'power2.out' }),
-        baseRot: sticker.classList.contains('sticker_1') ? -6 :
-                 sticker.classList.contains('sticker_2') ? 5 :
-                 sticker.classList.contains('sticker_3') ? -3 : 6,
-      };
-    });
+    // Showcase scale-in
+    heroTl.from('.showcase_frame', {
+      scale: 0.94,
+      opacity: 0,
+      y: 40,
+      duration: 1.1,
+      ease: 'power3.out',
+    }, '-=0.5');
 
-    const heroSection = document.getElementById('hero');
-    if (heroSection) {
-      heroSection.addEventListener('mousemove', (e) => {
-        const rect = heroSection.getBoundingClientRect();
-        const relX = (e.clientX - rect.left) - rect.width / 2;
-        const relY = (e.clientY - rect.top) - rect.height / 2;
-
-        stickerAnims.forEach(item => {
-          item.xTo(relX * item.speed);
-          item.yTo(relY * item.speed);
-          item.rotTo(item.baseRot + (relX * item.speed * 0.1));
-        });
-      });
-
-      heroSection.addEventListener('mouseleave', () => {
-        stickerAnims.forEach(item => {
-          item.xTo(0);
-          item.yTo(0);
-          item.rotTo(item.baseRot);
-        });
+    // Scroll-driven scale-down parallax on the hero showcase
+    if (typeof ScrollTrigger !== 'undefined') {
+      gsap.to('.showcase_media', {
+        scrollTrigger: {
+          trigger: '.hero_showcase_wrap',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
+        },
+        yPercent: 12,
+        scale: 1.08,
       });
     }
   }
 
   /* ==========================================================================
-     6. MAGNETIC TACTILE CTAs
+     4. MAGNETIC PILL BUTTONS
      ========================================================================== */
-  const magneticButtons = document.querySelectorAll('.hero_cta_primary, .nav_cta, .cta_submit_btn, .banner_btn');
+  const magneticButtons = document.querySelectorAll('.hero_btn_primary, .nav_cta, #submitBtn');
   if (typeof gsap !== 'undefined' && !prefersReducedMotion) {
     magneticButtons.forEach((btn) => {
       btn.addEventListener('mousemove', (e) => {
@@ -334,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.to(btn, {
           x: 0,
           y: 0,
-          duration: 0.6,
+          duration: 0.65,
           ease: 'elastic.out(1, 0.4)',
         });
       });
@@ -342,164 +163,99 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     7. SCROLL REVEALS & STRAIGHTENING CHOREOGRAPHY (ScrollTrigger)
+     5. SCROLL-LINKED PARALLAX & REVEALS (SCROLLTRIGGER)
      ========================================================================== */
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && !prefersReducedMotion) {
 
-    // Work Project Cards Stagger & Straighten
-    gsap.utils.toArray('.card_project').forEach((card, idx) => {
-      const initialRot = (idx % 2 === 0) ? -2 : 2;
+    // Portfolio Image Scrub Parallax
+    gsap.utils.toArray('.work_img[data-parallax="true"]').forEach((img) => {
+      gsap.to(img, {
+        scrollTrigger: {
+          trigger: img.closest('.card_work'),
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1,
+        },
+        yPercent: -12,
+        ease: 'none',
+      });
+    });
+
+    // Portfolio Card Scroll Reveal
+    gsap.utils.toArray('.card_work').forEach((card) => {
       gsap.from(card, {
         scrollTrigger: {
           trigger: card,
           start: 'top 88%',
-          toggleActions: 'play none none none',
         },
-        y: 60,
-        rotation: initialRot,
+        y: 40,
         opacity: 0,
-        duration: 0.85,
+        duration: 0.8,
         ease: 'power3.out',
       });
     });
 
-    // Bento Services Cards
-    gsap.utils.toArray('.bento_card').forEach((card, idx) => {
-      gsap.from(card, {
+    // Capabilities Section Stagger
+    gsap.utils.toArray('.capability_card').forEach((cap, idx) => {
+      gsap.from(cap, {
         scrollTrigger: {
-          trigger: card,
+          trigger: cap,
           start: 'top 86%',
-        },
-        y: 50,
-        opacity: 0,
-        scale: 0.94,
-        duration: 0.7,
-        delay: idx * 0.1,
-        ease: 'back.out(1.5)',
-      });
-    });
-
-    // Process Cards
-    gsap.utils.toArray('.card_process').forEach((step, idx) => {
-      gsap.from(step, {
-        scrollTrigger: {
-          trigger: step,
-          start: 'top 88%',
         },
         y: 45,
         opacity: 0,
-        duration: 0.7,
-        delay: idx * 0.12,
+        duration: 0.75,
+        delay: idx * 0.1,
         ease: 'power3.out',
       });
     });
 
-    // Testimonial Bubble Cards
-    gsap.utils.toArray('.card_testimonial').forEach((bubble, idx) => {
-      const rot = (idx === 0) ? -1.5 : (idx === 1) ? 1.5 : -1;
-      gsap.from(bubble, {
-        scrollTrigger: {
-          trigger: bubble,
-          start: 'top 88%',
-        },
-        y: 50,
-        rotation: rot,
-        opacity: 0,
-        duration: 0.75,
-        delay: idx * 0.1,
-        ease: 'back.out(1.4)',
-      });
-    });
+    // Stats Counter Animation
+    gsap.utils.toArray('.stat_number').forEach((statEl) => {
+      const targetVal = parseInt(statEl.dataset.target, 10) || 0;
+      const suffix = statEl.dataset.suffix || '';
 
-    // Giant CTA Card
-    gsap.from('.card_cta_giant', {
-      scrollTrigger: {
-        trigger: '.card_cta_giant',
+      ScrollTrigger.create({
+        trigger: statEl,
         start: 'top 85%',
-      },
-      y: 60,
-      scale: 0.95,
-      opacity: 0,
-      duration: 0.85,
-      ease: 'power3.out',
-    });
-  }
-
-  /* ==========================================================================
-     8. SHOWREEL INTERACTIVE PREVIEW TABS
-     ========================================================================== */
-  const showcaseTabs = document.querySelectorAll('.showcase_tab');
-  const showcaseImg = document.getElementById('showcaseImg');
-  const showcasePlayBtn = document.getElementById('showcasePlayBtn');
-
-  if (showcaseTabs.length > 0 && showcaseImg) {
-    showcaseTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        showcaseTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-
-        soundEngine.playPop(480);
-
-        const newSrc = tab.dataset.img;
-        if (newSrc && typeof gsap !== 'undefined') {
-          gsap.to(showcaseImg, {
-            opacity: 0.3,
-            scale: 0.98,
-            duration: 0.2,
-            onComplete: () => {
-              showcaseImg.src = newSrc;
-              gsap.to(showcaseImg, {
-                opacity: 1,
-                scale: 1,
-                duration: 0.35,
-                ease: 'power2.out',
-              });
-            }
+        once: true,
+        onEnter: () => {
+          gsap.to({ val: 0 }, {
+            val: targetVal,
+            duration: 1.8,
+            ease: 'power3.out',
+            onUpdate: function () {
+              statEl.textContent = Math.round(this.targets()[0].val) + suffix;
+            },
           });
-        }
+        },
       });
     });
-
-    if (showcasePlayBtn) {
-      showcasePlayBtn.addEventListener('click', () => {
-        soundEngine.playChime();
-        gsap.to(showcasePlayBtn, {
-          scale: 1.25,
-          rotation: 360,
-          duration: 0.5,
-          ease: 'back.out(2)',
-          onComplete: () => {
-            gsap.to(showcasePlayBtn, { scale: 1, duration: 0.3 });
-          }
-        });
-      });
-    }
   }
 
   /* ==========================================================================
-     9. WORK FILTERING FUNCTIONALITY
+     6. PORTFOLIO FILTERING
      ========================================================================== */
-  const filterPills = document.querySelectorAll('.filter_pill');
-  const projectCards = document.querySelectorAll('.card_project');
+  const filterBtns = document.querySelectorAll('.filter_btn');
+  const workCards = document.querySelectorAll('.card_work');
 
-  filterPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      filterPills.forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-      const filterValue = pill.dataset.filter;
-      soundEngine.playPop(420);
+      const filterVal = btn.dataset.filter;
 
-      projectCards.forEach(card => {
-        const categories = card.dataset.category || '';
-        const isMatch = (filterValue === 'all') || categories.includes(filterValue);
+      workCards.forEach(card => {
+        const cat = card.dataset.category || '';
+        const isMatch = (filterVal === 'all') || cat.includes(filterVal);
 
         if (isMatch) {
           card.style.display = 'flex';
           if (typeof gsap !== 'undefined') {
             gsap.fromTo(card,
-              { opacity: 0, scale: 0.92, y: 20 },
-              { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: 'power2.out' }
+              { opacity: 0, y: 15 },
+              { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' }
             );
           }
         } else {
@@ -510,63 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================================
-     10. BENTO MINI INTERACTIVE DEMOS
-     ========================================================================== */
-  // 1. Stamp button
-  const stampBtn = document.getElementById('stampBtn');
-  let stampCount = 0;
-  if (stampBtn) {
-    stampBtn.addEventListener('click', () => {
-      stampCount++;
-      soundEngine.playPop(700);
-      if (typeof gsap !== 'undefined') {
-        gsap.fromTo(stampBtn,
-          { scale: 0.85, rotation: -8 },
-          { scale: 1, rotation: 0, duration: 0.35, ease: 'elastic.out(1.2, 0.4)' }
-        );
-      }
-      stampBtn.querySelector('span').textContent = `STAMPED x${stampCount} ★`;
-    });
-  }
-
-  // 2. Spring Physics Demo Button
-  const springTestBtn = document.getElementById('springTestBtn');
-  if (springTestBtn) {
-    springTestBtn.addEventListener('click', () => {
-      soundEngine.playPop(300);
-      if (typeof gsap !== 'undefined') {
-        gsap.fromTo(springTestBtn,
-          { scaleX: 1.4, scaleY: 0.6, rotation: 8 },
-          { scaleX: 1, scaleY: 1, rotation: 0, duration: 0.8, ease: 'elastic.out(1.5, 0.3)' }
-        );
-      }
-    });
-  }
-
-  // 3. Tactile Switch Demo
-  const tactileDemoSwitch = document.getElementById('tactileDemoSwitch');
-  const switchLabel = document.getElementById('switchLabel');
-  if (tactileDemoSwitch && switchLabel) {
-    tactileDemoSwitch.addEventListener('change', () => {
-      soundEngine.playClick(tactileDemoSwitch.checked ? 750 : 350, 0.05);
-      switchLabel.textContent = tactileDemoSwitch.checked
-        ? 'Tactile Mode: ACTIVE'
-        : 'Tactile Mode: SLEEPING';
-    });
-  }
-
-  // 4. Device Pills Demo
-  const devPills = document.querySelectorAll('.dev_pill');
-  devPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      devPills.forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      soundEngine.playPop(600);
-    });
-  });
-
-  /* ==========================================================================
-     11. MOBILE DRAWER NAVIGATION
+     7. MOBILE DRAWER NAVIGATION
      ========================================================================== */
   const navToggle = document.getElementById('navToggle');
   const mobileDrawer = document.getElementById('mobileDrawer');
@@ -575,37 +275,34 @@ document.addEventListener('DOMContentLoaded', () => {
     navToggle.addEventListener('click', () => {
       const isOpen = mobileDrawer.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', isOpen);
-      soundEngine.playPop(isOpen ? 540 : 380);
 
-      const lines = navToggle.querySelectorAll('.burger_line');
+      const bars = navToggle.querySelectorAll('.burger_bar');
       if (isOpen) {
-        lines[0].style.transform = 'translateY(3.5px) rotate(45deg)';
-        lines[1].style.transform = 'translateY(-3.5px) rotate(-45deg)';
+        bars[0].style.transform = 'translateY(3.5px) rotate(45deg)';
+        bars[1].style.transform = 'translateY(-3.5px) rotate(-45deg)';
       } else {
-        lines[0].style.transform = 'none';
-        lines[1].style.transform = 'none';
+        bars[0].style.transform = 'none';
+        bars[1].style.transform = 'none';
       }
     });
 
-    // Close mobile drawer upon link click
     mobileDrawer.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mobileDrawer.classList.remove('open');
         navToggle.setAttribute('aria-expanded', 'false');
-        const lines = navToggle.querySelectorAll('.burger_line');
-        lines[0].style.transform = 'none';
-        lines[1].style.transform = 'none';
+        const bars = navToggle.querySelectorAll('.burger_bar');
+        bars[0].style.transform = 'none';
+        bars[1].style.transform = 'none';
       });
     });
   }
 
   /* ==========================================================================
-     12. BACK TO TOP BUTTON WITH SMOOTH SCROLL
+     8. BACK TO TOP & ANCHOR SMOOTH SCROLL
      ========================================================================== */
   const backToTopBtn = document.getElementById('backToTop');
   if (backToTopBtn) {
     backToTopBtn.addEventListener('click', () => {
-      soundEngine.playPop(650);
       if (lenis) {
         lenis.scrollTo(0, { duration: 1.2 });
       } else {
@@ -614,7 +311,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Anchor links smooth scrolling via Lenis
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
@@ -622,7 +318,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
         e.preventDefault();
-        soundEngine.playPop(480);
         if (lenis) {
           lenis.scrollTo(targetEl, { offset: -70, duration: 1.2 });
         } else {
@@ -633,11 +328,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================================
-     13. LIVE NEW YORK CITY STUDIO CLOCK
+     9. LIVE STUDIO CLOCK (NYC TIME)
      ========================================================================== */
-  const liveClockEl = document.getElementById('liveClock');
-  function updateNYCClock() {
-    if (!liveClockEl) return;
+  const clockEl = document.getElementById('nycClock');
+  function updateClock() {
+    if (!clockEl) return;
     try {
       const now = new Date();
       const options = {
@@ -647,70 +342,79 @@ document.addEventListener('DOMContentLoaded', () => {
         second: '2-digit',
         hour12: true
       };
-      const timeString = new Intl.DateTimeFormat('en-US', options).format(now);
-      liveClockEl.textContent = `NYC ${timeString} • AVAILABLE FOR NEW COMMISSIONS`;
-    } catch (e) {
-      // Fallback
-    }
+      const timeStr = new Intl.DateTimeFormat('en-US', options).format(now);
+      clockEl.textContent = `NYC ${timeStr} • AVAILABLE FOR COMMISSIONS`;
+    } catch (e) {}
   }
-  updateNYCClock();
-  setInterval(updateNYCClock, 1000);
+  updateClock();
+  setInterval(updateClock, 1000);
 
   /* ==========================================================================
-     14. INTERACTIVE PROJECT SUBMISSION & MODAL
+     10. DIALOGUE MODAL SUBMISSION
      ========================================================================== */
-  const inquiryModal = document.getElementById('inquiryModal');
-  const modalCloseBtn = document.getElementById('modalCloseBtn');
-  const modalDoneBtn = document.getElementById('modalDoneBtn');
+  const dialogueModal = document.getElementById('dialogueModal');
+  const modalClose = document.getElementById('modalClose');
+  const modalDismiss = document.getElementById('modalDismiss');
   const modalBackdrop = document.getElementById('modalBackdrop');
   const modalText = document.getElementById('modalText');
 
-  window.handleProjectSubmit = function () {
+  window.handleDialogueSubmit = function () {
     const emailInput = document.getElementById('clientEmail');
-    const scopeInput = document.querySelector('input[name="scope"]:checked');
+    const scopeOption = document.querySelector('input[name="scope"]:checked');
     const emailVal = emailInput ? emailInput.value.trim() : '';
-    const scopeVal = scopeInput ? scopeInput.value : 'Brand Identity';
+    const scopeVal = scopeOption ? scopeOption.value : 'Complete Rebrand';
 
     if (!emailVal || !emailVal.includes('@')) {
-      alert('Please enter a valid work email address.');
+      alert('Please enter a valid work email.');
       return;
     }
 
-    soundEngine.playChime();
-
     if (modalText) {
-      modalText.textContent = `Thank you for requesting "${scopeVal}". We've dispatched our project scoping deck and booking link directly to ${emailVal}. Let's make something they can't ignore!`;
+      modalText.textContent = `Thank you for initiating conversation regarding "${scopeVal}". Our principals have dispatched our private atelier dossier and direct calendar invite to ${emailVal}.`;
     }
 
-    if (inquiryModal) {
-      inquiryModal.classList.add('active');
-      inquiryModal.setAttribute('aria-hidden', 'false');
+    if (dialogueModal) {
+      dialogueModal.classList.add('active');
+      dialogueModal.setAttribute('aria-hidden', 'false');
     }
 
     if (emailInput) emailInput.value = '';
   };
 
-  function closeModal() {
-    if (inquiryModal) {
-      inquiryModal.classList.remove('active');
-      inquiryModal.setAttribute('aria-hidden', 'true');
-      soundEngine.playPop(350);
+  function closeDialog() {
+    if (dialogueModal) {
+      dialogueModal.classList.remove('active');
+      dialogueModal.setAttribute('aria-hidden', 'true');
     }
   }
 
-  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
-  if (modalDoneBtn) modalDoneBtn.addEventListener('click', closeModal);
-  if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+  if (modalClose) modalClose.addEventListener('click', closeDialog);
+  if (modalDismiss) modalDismiss.addEventListener('click', closeDialog);
+  if (modalBackdrop) modalBackdrop.addEventListener('click', closeDialog);
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && inquiryModal && inquiryModal.classList.contains('active')) {
-      closeModal();
+    if (e.key === 'Escape' && dialogueModal && dialogueModal.classList.contains('active')) {
+      closeDialog();
     }
   });
 
-  // Log OH! STUDIO creative developer greeting
+  // Showcase click feedback
+  const showcasePlay = document.getElementById('showcasePlay');
+  if (showcasePlay && typeof gsap !== 'undefined') {
+    showcasePlay.addEventListener('click', () => {
+      gsap.to(showcasePlay, {
+        scale: 1.15,
+        duration: 0.3,
+        ease: 'back.out(2)',
+        onComplete: () => {
+          gsap.to(showcasePlay, { scale: 1, duration: 0.25 });
+        }
+      });
+    });
+  }
+
   console.log(
-    '%c⚡ OH! STUDIO — BOLD, TACTILE & PLAYFUL CREATIVE LAB',
-    'background: #CCFF00; color: #121212; font-size: 14px; font-weight: 800; padding: 6px 12px; border: 2px solid #121212; border-radius: 6px;'
+    '%c✦ OH! STUDIO — STRICT TWO-TONE EDITORIAL ATELIER',
+    'background: #790B13; color: #FFF0DC; font-size: 13px; font-weight: 800; padding: 6px 12px; border-radius: 4px;'
   );
 });
