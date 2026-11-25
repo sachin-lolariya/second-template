@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OH! STUDIO — Bold, Tactile &amp; Playful Creative Agency</title>
+  <meta name="description" content="OH! STUDIO is an award-winning creative laboratory crafting high-voltage brand identities, bespoke Webflow/Framer websites, and liquid GSAP motion.">
+
+  <!-- Google Fonts: Bricolage Grotesque (800) + DM Sans (400, 500, 700) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23CCFF00' stroke='%23121212' stroke-width='8'/><text x='50%' y='62%' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='42' fill='%23121212'>OH!</text></svg>">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-body">
+
+  <!-- Background Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Custom Tactile Cursor -->
+  <div class="custom-cursor" aria-hidden="true" id="customCursor"></div>
+  <div class="custom-cursor-follower" aria-hidden="true" id="customCursorFollower"></div>
+
+  <!-- Floating Tactile Pill Navbar -->
+  <header class="navbar_wrapper" id="navbar">
+    <nav class="navbar_container" aria-label="Main Navigation">
+      <!-- Brand Logo -->
+      <a href="#hero" class="nav_brand" aria-label="OH! STUDIO Home">
+        <span class="brand_badge">OH!</span>
+        <span class="brand_name">STUDIO</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="nav_menu" id="navMenu">
+        <a href="#work" class="nav_link">Work</a>
+        <a href="#services" class="nav_link">Services</a>
+        <a href="#process" class="nav_link">Process</a>
+        <a href="#testimonials" class="nav_link">About</a>
+      </div>
+
+      <!-- Nav Actions -->
+      <div class="nav_actions">
+        <!-- Tactile Sound Toggle -->
+        <button type="button" class="btn_sound" id="soundToggle" aria-label="Toggle Tactile Audio FX" title="Toggle Tactile Click FX">
+          <svg class="icon_sound on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+          <svg class="icon_sound off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+          <span class="sound_label">FX</span>
+        </button>
+
+        <!-- CTA Pill Button -->
+        <a href="#contact" class="btn_pill btn_lime nav_cta" id="navCta">
+          <span>Say Oh!</span>
+          <span class="cta_arrow">→</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger -->
+        <button type="button" class="nav_hamburger" id="navToggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <span class="burger_line"></span>
+          <span class="burger_line"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile_drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile_drawer_inner">
+      <div class="mobile_links">
+        <a href="#work" class="mobile_link">Work <span class="mobile_arrow">↗</span></a>
+        <a href="#services" class="mobile_link">Services <span class="mobile_arrow">↗</span></a>
+        <a href="#process" class="mobile_link">Process <span class="mobile_arrow">↗</span></a>
+        <a href="#testimonials" class="mobile_link">About <span class="mobile_arrow">↗</span></a>
+        <a href="#contact" class="mobile_link">Contact <span class="mobile_arrow">↗</span></a>
+      </div>
+      <div class="mobile_badge_row">
+        <div class="pill_tag pill_tangerine">EST. 2026</div>
+        <div class="pill_tag pill_lilac">100% TACTILE</div>
+        <div class="pill_tag pill_blue">GSAP + LENIS</div>
+      </div>
+    </div>
+  </div>
+
+  <main id="mainContent">
+
+    <!-- ==============================================
+         SECTION 1: PLAYFUL TACTILE HERO
+         ============================================== -->
+    <section class="section_hero" id="hero">
+      <div class="container_large hero_container">
+
+        <!-- Floating Sticker Badges with Parallax -->
+        <div class="hero_stickers_wrap" aria-hidden="true">
+          <!-- Sticker 1: Established -->
+          <div class="hero_sticker sticker_1" data-parallax="0.06">
+            <span class="sticker_icon">★</span>
+            <span class="sticker_text">OH! EST. 2026</span>
+          </div>
+
+          <!-- Sticker 2: Stack -->
+          <div class="hero_sticker sticker_2" data-parallax="-0.08">
+            <span class="sticker_icon">⚡</span>
+            <span class="sticker_text">WEBFLOW + FRAMER</span>
+          </div>
+
+          <!-- Sticker 3: Philosophy -->
+          <div class="hero_sticker sticker_3" data-parallax="0.09">
+            <span class="sticker_icon">●</span>
+            <span class="sticker_text">100% TACTILE</span>
+          </div>
+
+          <!-- Sticker 4: Awwwards -->
+          <div class="hero_sticker sticker_4" data-parallax="-0.05">
+            <span class="sticker_badge">SOTD</span>
+            <span class="sticker_text">AWWWARDS ★</span>
+          </div>
+        </div>
+
+        <!-- Hero Main Content -->
+        <div class="hero_content_wrap">
+          <!-- Live Status Tag -->
+          <div class="hero_status_pill">
+            <span class="status_dot"></span>
+            <span class="status_text">Now Booking Q2/Q3 Projects • 2 Slots Left</span>
+          </div>
+
+          <!-- Punchy Expressive Hero Headline -->
+          <h1 class="hero_headline" id="heroHeadline">
+            <span class="headline_row">
+              <span class="headline_text">WE BUILD</span>
+              <span class="inline_pill pill_tangerine">
+                <svg class="star_icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                <span>BOLD</span>
+              </span>
+            </span>
+            <span class="headline_row">
+              <span class="headline_text">DIGITAL BRANDS</span>
+            </span>
+            <span class="headline_row">
+              <span class="headline_text">THAT MAKE EM SAY</span>
+              <span class="inline_pill pill_lime">
+                <span class="inline_zap">⚡</span>
+                <span class="inline_glow">OH!</span>
+              </span>
+            </span>
+          </h1>
+
+          <!-- Hero Subheadline -->
+          <p class="hero_description">
+            A boutique creative laboratory sculpting ultra-tactile visual identities, bespoke Webflow &amp; Framer architectures, and liquid GSAP motion that convert passing curiosity into fierce cult followings.
+          </p>
+
+          <!-- Dual Tactile CTAs -->
+          <div class="hero_cta_group">
+            <a href="#contact" class="btn_tactile btn_tangerine hero_cta_primary">
+              <span class="btn_icon_spark">✦</span>
+              <span>Start a Project</span>
+              <span class="btn_arrow">↗</span>
+            </a>
+            <a href="#work" class="btn_tactile btn_white hero_cta_secondary">
+              <span>See Our Work</span>
+              <span class="btn_arrow_down">↓</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Visual Showcase / Showreel Card -->
+        <div class="showcase_card_wrap" id="heroShowcase">
+          <div class="showcase_card">
+            <!-- Showcase Top Bar -->
+            <div class="showcase_topbar">
+              <div class="showcase_window_dots">
+                <span class="dot dot_red"></span>
+                <span class="dot dot_yellow"></span>
+                <span class="dot dot_green"></span>
+              </div>
+              <div class="showcase_title_pill">OH! SHOWREEL 2026 • 4K 60FPS</div>
+              <div class="showcase_live_badge">
+                <span class="live_pulse"></span> LIVE REEL
+              </div>
+            </div>
+
+            <!-- Showcase Preview Screen -->
+            <div class="showcase_preview_area" id="showcaseArea">
+              <!-- Background Art Image -->
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=85" alt="OH! STUDIO Interactive Visual Reel" class="showcase_bg_img" id="showcaseImg">
+
+              <!-- Ambient Glow & Pattern -->
+              <div class="showcase_gradient_overlay"></div>
+
+              <!-- Interactive Center Play Trigger -->
+              <div class="showcase_play_trigger" id="showcasePlayBtn">
+                <div class="play_circle">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </div>
+                <div class="play_label">CLICK TO EXPLORE</div>
+              </div>
+
+              <!-- Showcase Floating Feature Pills -->
+              <div class="showcase_floating_pills">
+                <div class="showcase_stat_pill">
+                  <span class="stat_num">14x</span>
+                  <span class="stat_desc">Awwwards SOTD</span>
+                </div>
+                <div class="showcase_stat_pill">
+                  <span class="stat_num">99.8%</span>
+                  <span class="stat_desc">Client Euphoria</span>
+                </div>
+                <div class="showcase_stat_pill">
+                  <span class="stat_num">0.2s</span>
+                  <span class="stat_desc">Instant Tactile Response</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Showcase Bottom Interactive Tabs -->
+            <div class="showcase_bottom_bar">
+              <button type="button" class="showcase_tab active" data-img="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=85" data-caption="Kinetic 3D Webflow Architecture">
+                <span class="tab_num">01</span> Kinetic 3D
+              </button>
+              <button type="button" class="showcase_tab" data-img="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1600&q=85" data-caption="Tactile DTC Packaging & Brand Systems">
+                <span class="tab_num">02</span> Brand Systems
+              </button>
+              <button type="button" class="showcase_tab" data-img="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85" data-caption="Liquid GSAP & Spatial WebGL">
+                <span class="tab_num">03</span> Liquid Motion
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 2: ANGLED KINETIC MARQUEE RIBBON
+         ============================================== -->
+    <div class="marquee_section_wrap" aria-hidden="true">
+      <div class="marquee_ribbon">
+        <div class="marquee_track" id="marqueeTrack">
+          <span class="marquee_item">OH! STUDIO <span class="marquee_star">★</span> BRANDING <span class="marquee_star">★</span> WEB DESIGN <span class="marquee_star">★</span> GSAP MOTION <span class="marquee_star">★</span> FRAMER <span class="marquee_star">★</span> WEBFLOW <span class="marquee_star">★</span> DIGITAL ARCHITECTURE <span class="marquee_star">★</span> EXPERIMENTAL UI <span class="marquee_star">★</span></span>
+          <span class="marquee_item">OH! STUDIO <span class="marquee_star">★</span> BRANDING <span class="marquee_star">★</span> WEB DESIGN <span class="marquee_star">★</span> GSAP MOTION <span class="marquee_star">★</span> FRAMER <span class="marquee_star">★</span> WEBFLOW <span class="marquee_star">★</span> DIGITAL ARCHITECTURE <span class="marquee_star">★</span> EXPERIMENTAL UI <span class="marquee_star">★</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==============================================
+         SECTION 3: FEATURED WORK GRID (CASE STUDIES)
+         ============================================== -->
+    <section class="section_work" id="work">
+      <div class="container_large">
+
+        <!-- Work Header -->
+        <div class="section_header_row">
+          <div class="section_header_col">
+            <div class="pill_tag pill_black">SELECTED CASES</div>
+            <h2 class="section_title">Work That Stops Thumbs &amp; Starts Obsessions.</h2>
+          </div>
+          <div class="work_filter_pills" id="workFilters">
+            <button type="button" class="filter_pill active" data-filter="all">All (4)</button>
+            <button type="button" class="filter_pill" data-filter="branding">Branding</button>
+            <button type="button" class="filter_pill" data-filter="web">Webflow &amp; Framer</button>
+            <button type="button" class="filter_pill" data-filter="motion">Motion</button>
+          </div>
+        </div>
+
+        <!-- Asymmetric 2-Column Work Grid -->
+        <div class="work_grid">
+
+          <!-- Card 1: NEO-CHROMA (Lilac accent) -->
+          <article class="card_project card_lilac" data-category="branding web">
+            <div class="project_image_wrap">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=85" alt="Neo-Chroma synthesizer brand project thumbnail" class="project_img">
+              <div class="project_year_badge">2026</div>
+              <div class="project_floating_cta">
+                <span class="cta_circle_btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="project_content">
+              <div class="project_tags_row">
+                <span class="pill_micro pill_black">BRANDING</span>
+                <span class="pill_micro pill_white">WEBFLOW 3D</span>
+                <span class="pill_micro pill_lime">SOTD ★</span>
+              </div>
+              <h3 class="project_title">NEO-CHROMA</h3>
+              <p class="project_desc">
+                Audio-reactive visual synthesis engine and 3D Webflow digital platform for an avant-garde Berlin hardware studio.
+              </p>
+              <div class="project_footer_row">
+                <span class="project_client">Client: Chroma Labs Berlin</span>
+                <span class="project_metric">+240% Pre-Orders</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: SUPERSONIC COFFEE (Tangerine accent) -->
+          <article class="card_project card_tangerine" data-category="web branding">
+            <div class="project_image_wrap">
+              <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=1200&q=85" alt="Supersonic Coffee DTC Packaging thumbnail" class="project_img">
+              <div class="project_year_badge">2025</div>
+              <div class="project_floating_cta">
+                <span class="cta_circle_btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="project_content">
+              <div class="project_tags_row">
+                <span class="pill_micro pill_black">E-COMMERCE</span>
+                <span class="pill_micro pill_white">FRAMER</span>
+                <span class="pill_micro pill_tangerine">PACKAGING</span>
+              </div>
+              <h3 class="project_title">SUPERSONIC</h3>
+              <p class="project_desc">
+                Tactile DTC packaging overhaul and hyper-fast headless Framer storefront engineered for cold-brew fanatics.
+              </p>
+              <div class="project_footer_row">
+                <span class="project_client">Client: Supersonic Roasters</span>
+                <span class="project_metric">0.4s Page Load</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: HYPEROBJECTS LAB (Cobalt Blue accent) -->
+          <article class="card_project card_blue" data-category="motion web">
+            <div class="project_image_wrap">
+              <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1200&q=85" alt="Hyperobjects Lab generative portfolio thumbnail" class="project_img">
+              <div class="project_year_badge">2026</div>
+              <div class="project_floating_cta">
+                <span class="cta_circle_btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="project_content">
+              <div class="project_tags_row">
+                <span class="pill_micro pill_black">GSAP MOTION</span>
+                <span class="pill_micro pill_white">SPATIAL WEB</span>
+                <span class="pill_micro pill_lime">DEV AWARDS</span>
+              </div>
+              <h3 class="project_title">HYPEROBJECTS</h3>
+              <p class="project_desc">
+                Kinetic interactive experience and custom WebGL particle engine for a pioneering speculative robotics laboratory.
+              </p>
+              <div class="project_footer_row">
+                <span class="project_client">Client: Hyperobjects AI</span>
+                <span class="project_metric">60fps Seamless</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: VOLT PROTOCOL (Acid Lime accent) -->
+          <article class="card_project card_lime" data-category="branding motion">
+            <div class="project_image_wrap">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85" alt="Volt Protocol design system thumbnail" class="project_img">
+              <div class="project_year_badge">2025</div>
+              <div class="project_floating_cta">
+                <span class="cta_circle_btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="project_content">
+              <div class="project_tags_row">
+                <span class="pill_micro pill_black">BRAND IDENTITY</span>
+                <span class="pill_micro pill_white">DESIGN SYSTEM</span>
+                <span class="pill_micro pill_lilac">FINTECH</span>
+              </div>
+              <h3 class="project_title">VOLT PROTOCOL</h3>
+              <p class="project_desc">
+                Electrified brand refresh, fluid design tokens, and high-velocity marketing suite for decentralized power grids.
+              </p>
+              <div class="project_footer_row">
+                <span class="project_client">Client: Volt Energy DAO</span>
+                <span class="project_metric">$42M Staked</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Work Bottom CTA Banner -->
+        <div class="work_archive_banner">
+          <div class="banner_left">
+            <span class="banner_spark">✦</span>
+            <span>Hungry to see 20+ more client case studies in our secret vault?</span>
+          </div>
+          <a href="#contact" class="btn_tactile btn_black banner_btn">
+            <span>Request Agency Deck</span>
+            <span>→</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 4: TACTILE SERVICES BENTO
+         ============================================== -->
+    <section class="section_services" id="services">
+      <div class="container_large">
+
+        <!-- Services Header -->
+        <div class="section_header_center">
+          <div class="pill_tag pill_lime">OUR CORE CRAFT</div>
+          <h2 class="section_title">Four Pillars of Unapologetic Digital Fire.</h2>
+          <p class="section_subtitle">
+            We don’t do generic corporate beige. Every project gets custom-engineered from raw ideas into magnetic, tactile reality.
+          </p>
+        </div>
+
+        <!-- 4-Card Bento Grid -->
+        <div class="services_bento_grid">
+
+          <!-- Bento Card 1: Brand Identity (Lilac #DFC5FE) -->
+          <div class="bento_card bento_lilac" data-tilt>
+            <div class="bento_top">
+              <div class="bento_icon_badge icon_lilac">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <span class="bento_badge_num">01</span>
+            </div>
+            <h3 class="bento_title">Brand Identity &amp; World-Building</h3>
+            <p class="bento_desc">
+              We forge electric, unmistakable visual codes that make your brand stand 10 feet taller than anyone in your category.
+            </p>
+            <ul class="bento_list">
+              <li><span class="check_bullet">✔</span> Comprehensive Visual Strategy</li>
+              <li><span class="check_bullet">✔</span> Custom Typography &amp; Logomarks</li>
+              <li><span class="check_bullet">✔</span> Tactile Guidelines &amp; Mascot Design</li>
+              <li><span class="check_bullet">✔</span> Packaging, Merch &amp; Physical Collateral</li>
+            </ul>
+            <!-- Mini interactive widget -->
+            <div class="bento_widget widget_stamp">
+              <span class="widget_text">Interactive Brand Stamp:</span>
+              <button type="button" class="stamp_press_btn" id="stampBtn">
+                <span>STAMP OH! ★</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Bento Card 2: Framer & Webflow (Acid Lime #CCFF00) -->
+          <div class="bento_card bento_lime" data-tilt>
+            <div class="bento_top">
+              <div class="bento_icon_badge icon_lime">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <span class="bento_badge_num">02</span>
+            </div>
+            <h3 class="bento_title">Bespoke Framer &amp; Webflow Dev</h3>
+            <p class="bento_desc">
+              Pixel-perfect translation of wild creative ideas into robust, lightning-fast, client-manageable production builds.
+            </p>
+            <ul class="bento_list">
+              <li><span class="check_bullet">✔</span> Client-First Structured Class System</li>
+              <li><span class="check_bullet">✔</span> Custom CMS Architectures</li>
+              <li><span class="check_bullet">✔</span> 100/100 Google Lighthouse Core Vitals</li>
+              <li><span class="check_bullet">✔</span> Seamless E-Commerce &amp; Integrations</li>
+            </ul>
+            <!-- Mini interactive widget -->
+            <div class="bento_widget widget_device">
+              <div class="device_pill_group">
+                <span class="dev_pill active">Desktop</span>
+                <span class="dev_pill">Tablet</span>
+                <span class="dev_pill">Mobile</span>
+              </div>
+              <span class="device_stat">100% Fluid Responsive</span>
+            </div>
+          </div>
+
+          <!-- Bento Card 3: GSAP Motion & Interaction (Electric Tangerine #FF5A1F) -->
+          <div class="bento_card bento_tangerine" data-tilt>
+            <div class="bento_top">
+              <div class="bento_icon_badge icon_tangerine">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                </svg>
+              </div>
+              <span class="bento_badge_num">03</span>
+            </div>
+            <h3 class="bento_title">Liquid GSAP Motion &amp; Choreography</h3>
+            <p class="bento_desc">
+              Fluid, elastic, physics-driven interactions that feel delightful under your fingers and keep visitors exploring twice as long.
+            </p>
+            <ul class="bento_list">
+              <li><span class="check_bullet">✔</span> ScrollTrigger Orchestration</li>
+              <li><span class="check_bullet">✔</span> Lenis Smooth-Scroll Synchronization</li>
+              <li><span class="check_bullet">✔</span> Magnetic Tactile Physics &amp; Haptics</li>
+              <li><span class="check_bullet">✔</span> WebGL Shaders &amp; Interactive Canvas</li>
+            </ul>
+            <!-- Mini interactive widget -->
+            <div class="bento_widget widget_spring">
+              <span class="widget_text">Test Spring Physics:</span>
+              <button type="button" class="spring_test_btn" id="springTestBtn">
+                <span>BOUNCE ME ⚡</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Bento Card 4: Digital Products & Design Tokens (White Card #FFFFFF) -->
+          <div class="bento_card bento_white" data-tilt>
+            <div class="bento_top">
+              <div class="bento_icon_badge icon_white">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+              </div>
+              <span class="bento_badge_num">04</span>
+            </div>
+            <h3 class="bento_title">Digital Products &amp; Design Systems</h3>
+            <p class="bento_desc">
+              From zero to complete Figma token systems that scale seamlessly across multi-disciplinary teams and enterprise apps.
+            </p>
+            <ul class="bento_list">
+              <li><span class="check_bullet">✔</span> Design Token Systems (Color, Type, Space)</li>
+              <li><span class="check_bullet">✔</span> Complete UI Component Libraries</li>
+              <li><span class="check_bullet">✔</span> High-Fidelity Interactive Prototypes</li>
+              <li><span class="check_bullet">✔</span> WCAG 2.1 AA Accessible Foundations</li>
+            </ul>
+            <!-- Mini interactive widget -->
+            <div class="bento_widget widget_toggle">
+              <label class="tactile_switch" for="tactileDemoSwitch">
+                <input type="checkbox" id="tactileDemoSwitch" checked>
+                <span class="switch_slider"></span>
+              </label>
+              <span class="switch_label" id="switchLabel">Tactile Mode: ACTIVE</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 5: PROCESS / "HOW OH! ROLLS"
+         ============================================== -->
+    <section class="section_process" id="process">
+      <div class="container_large">
+
+        <!-- Process Header -->
+        <div class="section_header_row">
+          <div class="section_header_col">
+            <div class="pill_tag pill_tangerine">THE BLUEPRINT</div>
+            <h2 class="section_title">Zero Bureaucracy. 100% Momentum.</h2>
+          </div>
+          <div class="process_badge_box">
+            <span class="badge_speed">25-DAY AVERAGE SPRINT</span>
+          </div>
+        </div>
+
+        <!-- 3 Oversized Tactile Process Cards -->
+        <div class="process_cards_grid">
+
+          <!-- Step 01: SPARK -->
+          <div class="card_process process_step_1">
+            <div class="process_card_top">
+              <div class="process_step_badge">DAYS 01–05</div>
+              <div class="tilted_tag tag_lilac">DISCOVERY SPRINT</div>
+            </div>
+            <div class="process_num">01</div>
+            <h3 class="process_title">THE SPARK</h3>
+            <p class="process_desc">
+              We tear down assumptions and excavate your unfair advantage. High-voltage moodboards, interactive art direction spikes, and clear architecture scopes.
+            </p>
+            <div class="process_checklist">
+              <div class="chk_item"><span>✦</span> Stakeholder Alignment Jam</div>
+              <div class="chk_item"><span>✦</span> Competitive Deconstruction</div>
+              <div class="chk_item"><span>✦</span> 3 Radical Aesthetic Directions</div>
+            </div>
+          </div>
+
+          <!-- Step 02: CRAFT -->
+          <div class="card_process process_step_2">
+            <div class="process_card_top">
+              <div class="process_step_badge">DAYS 06–20</div>
+              <div class="tilted_tag tag_lime">PIXEL OBSESSION</div>
+            </div>
+            <div class="process_num">02</div>
+            <h3 class="process_title">THE CRAFT</h3>
+            <p class="process_desc">
+              We design in high-fidelity and build simultaneously. Every micro-interaction is custom-choreographed in GSAP, every component tokenized and tested.
+            </p>
+            <div class="process_checklist">
+              <div class="chk_item"><span>✦</span> Client-First Webflow/Framer Build</div>
+              <div class="chk_item"><span>✦</span> Liquid GSAP Motion Choreography</div>
+              <div class="chk_item"><span>✦</span> Responsive Staging Previews</div>
+            </div>
+          </div>
+
+          <!-- Step 03: LAUNCH -->
+          <div class="card_process process_step_3">
+            <div class="process_card_top">
+              <div class="process_step_badge">DAYS 21–25</div>
+              <div class="tilted_tag tag_tangerine">ZERO-GLITCH TAKEOFF</div>
+            </div>
+            <div class="process_num">03</div>
+            <h3 class="process_title">THE LAUNCH</h3>
+            <p class="process_desc">
+              Cross-browser stress testing, SEO optimization, and live deployment with zero downtime. Plus comprehensive Loom walkthroughs for your team.
+            </p>
+            <div class="process_checklist">
+              <div class="chk_item"><span>✦</span> Lighthouse 95+ Audit Pass</div>
+              <div class="chk_item"><span>✦</span> Custom CMS Handover Training</div>
+              <div class="chk_item"><span>✦</span> 30-Day Post-Launch Armor Support</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 6: CLIENT LOVE (TESTIMONIALS)
+         ============================================== -->
+    <section class="section_testimonials" id="testimonials">
+      <div class="container_large">
+
+        <!-- Header -->
+        <div class="section_header_center">
+          <div class="pill_tag pill_lilac">STREET CRED</div>
+          <h2 class="section_title">Words From Our Co-Conspirators.</h2>
+          <p class="section_subtitle">
+            What happens when visionary founders partner with obsessive creative builders.
+          </p>
+        </div>
+
+        <!-- Speech-Bubble Testimonial Grid -->
+        <div class="testimonials_grid">
+
+          <!-- Testimonial 1 -->
+          <div class="card_testimonial bubble_card">
+            <div class="bubble_stars">★★★★★</div>
+            <p class="bubble_quote">
+              “OH! STUDIO blew our previous agency out of the water. Our conversion jumped <span class="highlight_text">+142%</span> within three weeks of launch. The tactile button physics alone became a viral tweet.”
+            </p>
+            <div class="bubble_tail"></div>
+            <div class="author_row">
+              <div class="author_avatar avatar_1">
+                <span>EV</span>
+              </div>
+              <div class="author_meta">
+                <div class="author_name">Elena Vance</div>
+                <div class="author_role">Founder &amp; CEO, Kroma Labs</div>
+              </div>
+              <div class="client_verified_pill">Verified</div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="card_testimonial bubble_card">
+            <div class="bubble_stars">★★★★★</div>
+            <p class="bubble_quote">
+              “They didn’t just build a site; they built an obsession. Clients message us every week asking who engineered the liquid scroll transitions. Working with them was pure creative fire.”
+            </p>
+            <div class="bubble_tail"></div>
+            <div class="author_row">
+              <div class="author_avatar avatar_2">
+                <span>MT</span>
+              </div>
+              <div class="author_meta">
+                <div class="author_name">Marcus Thorne</div>
+                <div class="author_role">Creative Director, HyperPeak</div>
+              </div>
+              <div class="client_verified_pill">Verified</div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="card_testimonial bubble_card">
+            <div class="bubble_stars">★★★★★</div>
+            <p class="bubble_quote">
+              “Zero bureaucratic bloat, lightning execution, and an aesthetic standard that legitimately deserves every design trophy. The single best capital allocation our venture made this fiscal year.”
+            </p>
+            <div class="bubble_tail"></div>
+            <div class="author_row">
+              <div class="author_avatar avatar_3">
+                <span>SL</span>
+              </div>
+              <div class="author_meta">
+                <div class="author_name">Sophia Lin</div>
+                <div class="author_role">General Partner, NextWave</div>
+              </div>
+              <div class="client_verified_pill">Verified</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 7: HIGH-IMPACT CALL TO ACTION
+         ============================================== -->
+    <section class="section_cta" id="contact">
+      <div class="container_large">
+
+        <div class="card_cta_giant">
+          <!-- Ambient decorative shapes -->
+          <div class="cta_bg_badge sticker_cta_1">⚡ 100% ELECTRIC</div>
+          <div class="cta_bg_badge sticker_cta_2">★ SAY OH!</div>
+
+          <div class="cta_inner_content">
+            <div class="pill_tag pill_lime">LET’S COLLIDE</div>
+            <h2 class="cta_giant_headline">
+              READY TO MAKE<br>THEM SAY <span class="cta_oh_box">OH!?</span>
+            </h2>
+            <p class="cta_subtext">
+              Have a bold project or rebranding on your horizon? Tell us where you are, where you want to go, and let's craft something unforgettable together.
+            </p>
+
+            <!-- Interactive Project Scope Form -->
+            <form class="cta_interactive_form" id="projectForm" onsubmit="event.preventDefault(); window.handleProjectSubmit();">
+              <div class="form_step_label">1. Select your project scope:</div>
+              <div class="scope_pills_group">
+                <label class="scope_radio">
+                  <input type="radio" name="scope" value="Brand Identity" checked>
+                  <span class="scope_pill_visual">★ Brand Identity</span>
+                </label>
+                <label class="scope_radio">
+                  <input type="radio" name="scope" value="Webflow & Framer">
+                  <span class="scope_pill_visual">⚡ Webflow &amp; Framer</span>
+                </label>
+                <label class="scope_radio">
+                  <input type="radio" name="scope" value="Full Agency Overhaul">
+                  <span class="scope_pill_visual">✦ Full Overhaul</span>
+                </label>
+              </div>
+
+              <div class="form_step_label">2. Your work email:</div>
+              <div class="cta_input_row">
+                <input type="email" class="cta_input" id="clientEmail" placeholder="founder@yourcompany.com" required>
+                <button type="submit" class="btn_tactile btn_lime cta_submit_btn" id="ctaSubmitBtn">
+                  <span>Send Signal</span>
+                  <span class="btn_arrow">→</span>
+                </button>
+              </div>
+              <div class="form_feedback" id="formFeedback"></div>
+            </form>
+
+            <div class="cta_guarantee_row">
+              <span class="guarantee_item">✔ 24-Hour Response Time</span>
+              <span class="guarantee_item">✔ Direct Partner Access</span>
+              <span class="guarantee_item">✔ NDA Guaranteed</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================================
+       SECTION 8: GIANT FOOTER & WORDMARK
+       ============================================== -->
+  <footer class="footer_main" id="about">
+    <div class="container_large">
+
+      <!-- Top Footer Row: Quick Links & Colophon -->
+      <div class="footer_top_row">
+        <div class="footer_col brand_col">
+          <div class="footer_brand_logo">
+            <span class="brand_badge">OH!</span>
+            <span class="brand_name">STUDIO</span>
+          </div>
+          <p class="footer_mission">
+            A playful, high-velocity creative engineering laboratory. Rejecting the beige since 2026.
+          </p>
+          <div class="footer_live_clock">
+            <span class="clock_dot"></span>
+            <span id="liveClock">NYC 02:45 PM • AVAILABLE FOR NEW COMMISSIONS</span>
+          </div>
+        </div>
+
+        <div class="footer_col">
+          <div class="footer_col_title">NAVIGATION</div>
+          <ul class="footer_links">
+            <li><a href="#work">Selected Work</a></li>
+            <li><a href="#services">Our Capabilities</a></li>
+            <li><a href="#process">Sprint Process</a></li>
+            <li><a href="#testimonials">Client Praise</a></li>
+            <li><a href="#contact">Contact Lab</a></li>
+          </ul>
+        </div>
+
+        <div class="footer_col">
+          <div class="footer_col_title">CONNECT</div>
+          <ul class="footer_links">
+            <li><a href="https://twitter.com" target="_blank" rel="noopener">Twitter / X ↗</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram ↗</a></li>
+            <li><a href="https://awwwards.com" target="_blank" rel="noopener">Awwwards ↗</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener">GitHub ↗</a></li>
+            <li><a href="https://readcv.com" target="_blank" rel="noopener">ReadCV ↗</a></li>
+          </ul>
+        </div>
+
+        <div class="footer_col">
+          <div class="footer_col_title">HEADQUARTERS</div>
+          <p class="footer_address">
+            SoHo Creative Loft<br>
+            484 Broadway, 4th Floor<br>
+            New York, NY 10013<br>
+            <a href="mailto:hello@ohstudio.creative" class="footer_email">hello@ohstudio.creative</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Edge-To-Edge Giant OH! STUDIO Wordmark -->
+      <div class="footer_wordmark_wrap" aria-hidden="true">
+        <h2 class="footer_giant_wordmark" id="giantWordmark">OH! STUDIO</h2>
+      </div>
+
+      <!-- Bottom Bar: Copyright & Back To Top -->
+      <div class="footer_bottom_bar">
+        <div class="footer_copyright">
+          © 2026 OH! STUDIO INC. ALL RIGHTS RESERVED. CODED WITH TACTILE GSAP &amp; LENIS.
+        </div>
+        <button type="button" class="btn_pill btn_white back_to_top_btn" id="backToTop" aria-label="Scroll Back To Top">
+          <span>Back to Top</span>
+          <span class="arrow_up">↑</span>
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Project Inquiry Success Modal -->
+  <div class="inquiry_modal" id="inquiryModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal_backdrop" id="modalBackdrop"></div>
+    <div class="modal_card">
+      <button type="button" class="modal_close_btn" id="modalCloseBtn" aria-label="Close Modal">✕</button>
+      <div class="modal_icon">⚡</div>
+      <h3 class="modal_title" id="modalTitle">SIGNAL RECEIVED!</h3>
+      <p class="modal_text" id="modalText">
+        Thank you for reaching out. We’ve sent a private calendar invite and project onboarding deck to your inbox. Let’s make something they can’t ignore!
+      </p>
+      <button type="button" class="btn_tactile btn_lime modal_done_btn" id="modalDoneBtn">
+        <span>Sounds Great! Let's Go</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- CDN Dependencies -->
+  <!-- 1. GSAP 3 Core -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <!-- 2. GSAP ScrollTrigger Plugin -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <!-- 3. Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- Production App Script -->
+  <script src="script.js"></script>
+</body>
+</html>
