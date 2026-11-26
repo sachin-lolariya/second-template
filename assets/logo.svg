@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 190" fill="none" role="img" aria-label="PABGOS! STUDIO">
+  <defs>
+    <!-- Reusable 5-point star for the exclamation dot -->
+    <polygon id="pabgos-star" points="0,-12 3.1,-4.3 11.4,-3.7 5,1.6 7.1,9.7 0,5.3 -7.1,9.7 -5,1.6 -11.4,-3.7 -3.1,-4.3" />
+    <!-- Reusable logo shapes so all 3 sticker layers align perfectly -->
+    <g id="pabgos-mark">
+      <text x="32" y="88" font-family="'Bricolage Grotesque', 'Arial Black', sans-serif" font-weight="800" font-size="76" letter-spacing="-3" transform="rotate(-1.5 200 60)">PABGOS</text>
+      <!-- Chunky tilted exclamation bar -->
+      <path d="M 358 24 L 380 28 L 369 65 L 352 62 Z" />
+      <!-- Star dot -->
+      <use href="#pabgos-star" transform="translate(358, 82) rotate(10)" />
+      <!-- Second line -->
+      <text x="46" y="162" font-family="'Bricolage Grotesque', 'Arial Black', sans-serif" font-weight="800" font-size="76" letter-spacing="-2">STUDIO</text>
+    </g>
+  </defs>
+
+  <!-- Layer 1: Outer Caramel Sticker Border -->
+  <use href="#pabgos-mark" stroke="#C48A5A" stroke-width="22" stroke-linejoin="round" stroke-linecap="round" />
+  <!-- Layer 2: Inner Cream Cutout Border -->
+  <use href="#pabgos-mark" stroke="#FAF6F0" stroke-width="11" stroke-linejoin="round" stroke-linecap="round" />
+  <!-- Layer 3: Core Espresso Fill -->
+  <use href="#pabgos-mark" fill="#2B1D17" />
+</svg>

@@ -1,59 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OH! STUDIO — Boutique Creative Studio &amp; Art Direction</title>
-  <meta name="description" content="OH! STUDIO is an award-winning boutique creative laboratory crafting unforgettable brands, editorial identities, bespoke Webflow &amp; Framer architectures, and liquid GSAP motion.">
+  <title>OH! STUDIO — Brand &amp; Digital Design Studio</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="description"
+    content="OH! STUDIO is an independent brand and digital design studio in New York and London, crafting visual identities, editorial websites, and motion systems.">
 
-  <!-- Google Fonts: Bricolage Grotesque (800) + Instrument Serif (400 italic) + DM Sans (400, 500, 700) -->
+  <!-- Google Fonts: Bricolage Grotesque + Instrument Serif + DM Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-
-  <!-- Favicon: Strict Two-Tone Burgundy & Cream -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23790B13'/><text x='50%' y='63%' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='42' fill='%23FFF0DC'>OH!</text></svg>">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="page-body">
 
-  <!-- Heavy Cardstock Paper Grain Texture Overlay -->
+  <!-- Subtle Cardstock Paper Grain (3% Opacity) -->
   <div class="grain-overlay" aria-hidden="true"></div>
-
-  <!-- Custom Editorial Cursor -->
-  <div class="custom-cursor" aria-hidden="true" id="customCursor"></div>
-  <div class="custom-cursor-follower" aria-hidden="true" id="customCursorFollower"></div>
 
   <!-- ==============================================
        1. MINIMAL EDITORIAL NAVBAR
        ============================================== -->
   <header class="navbar_wrapper" id="navbar">
     <div class="navbar_container">
-      <!-- Brand Logo -->
-      <a href="#hero" class="nav_brand" aria-label="OH! STUDIO Home">
-        <span class="brand_mark">OH!</span>
-        <span class="brand_title">STUDIO</span>
+      <a href="#hero" class="nav_brand" aria-label="PABGOS! STUDIO Home">
+        <svg class="nav_logo_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 190" fill="none" role="img" aria-label="PABGOS! STUDIO">
+          <defs>
+            <polygon id="nav-pabgos-star" points="0,-12 3.1,-4.3 11.4,-3.7 5,1.6 7.1,9.7 0,5.3 -7.1,9.7 -5,1.6 -11.4,-3.7 -3.1,-4.3" />
+            <g id="nav-pabgos-mark">
+              <text x="32" y="88" font-family="'Bricolage Grotesque', 'Arial Black', sans-serif" font-weight="800" font-size="76" letter-spacing="-3" transform="rotate(-1.5 200 60)">PABGOS</text>
+              <path d="M 358 24 L 380 28 L 369 65 L 352 62 Z" />
+              <use href="#nav-pabgos-star" transform="translate(358, 82) rotate(10)" />
+              <text x="46" y="162" font-family="'Bricolage Grotesque', 'Arial Black', sans-serif" font-weight="800" font-size="76" letter-spacing="-2">STUDIO</text>
+            </g>
+          </defs>
+          <use href="#nav-pabgos-mark" stroke="#C48A5A" stroke-width="22" stroke-linejoin="round" stroke-linecap="round" />
+          <use href="#nav-pabgos-mark" stroke="#FAF6F0" stroke-width="11" stroke-linejoin="round" stroke-linecap="round" />
+          <use href="#nav-pabgos-mark" fill="#2B1D17" />
+        </svg>
       </a>
 
-      <!-- Desktop Nav Links -->
       <nav class="nav_menu" aria-label="Primary Navigation">
         <a href="#work" class="nav_link">Work</a>
-        <a href="#studio" class="nav_link">Studio</a>
-        <a href="#services" class="nav_link">Services</a>
-        <a href="#ethos" class="nav_link">Ethos</a>
+        <a href="#services" class="nav_link">Practice</a>
+        <a href="#ethos" class="nav_link">Studio</a>
+        <a href="#contact" class="nav_link">Contact</a>
       </nav>
 
-      <!-- Nav CTA & Actions -->
       <div class="nav_actions">
         <a href="#contact" class="btn_pill btn_burgundy nav_cta" id="navCta">
           <span>Start a Project</span>
-          <span class="btn_arrow">→</span>
+          <span class="btn_arrow" aria-hidden="true">→</span>
         </a>
 
-        <!-- Mobile Menu Toggle -->
-        <button type="button" class="nav_hamburger" id="navToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <button type="button" class="nav_hamburger" id="navToggle" aria-label="Toggle Navigation Menu"
+          aria-expanded="false">
           <span class="burger_bar"></span>
           <span class="burger_bar"></span>
         </button>
@@ -69,16 +77,12 @@
           <span>Work</span>
           <span class="mobile_arrow">↗</span>
         </a>
-        <a href="#studio" class="mobile_nav_item">
-          <span>Studio</span>
-          <span class="mobile_arrow">↗</span>
-        </a>
         <a href="#services" class="mobile_nav_item">
-          <span>Services</span>
+          <span>Practice</span>
           <span class="mobile_arrow">↗</span>
         </a>
         <a href="#ethos" class="mobile_nav_item">
-          <span>Ethos</span>
+          <span>Studio</span>
           <span class="mobile_arrow">↗</span>
         </a>
         <a href="#contact" class="mobile_nav_item">
@@ -87,8 +91,8 @@
         </a>
       </div>
       <div class="mobile_footer_info">
-        <span class="mobile_badge">NYC • LDN // Q2 BOOKINGS OPEN</span>
-        <span class="mobile_email">hello@ohstudio.creative</span>
+        <span class="mobile_badge">New York &amp; London — Q2 Availability</span>
+        <a href="mailto:hello@ohstudio.design" class="mobile_email">hello@ohstudio.design</a>
       </div>
     </div>
   </div>
@@ -96,76 +100,60 @@
   <main id="mainContent">
 
     <!-- ==============================================
-         2. HIGH-IMPACT EDITORIAL HERO (CREAM CANVAS)
+         2. EDITORIAL HERO (CREAM CANVAS)
          ============================================== -->
     <section class="section_hero" id="hero">
       <div class="container-large">
 
-        <!-- Top Eyebrow Tag -->
         <div class="hero_eyebrow_wrap">
-          <span class="editorial_badge">
-            <span class="badge_dot"></span>
-            BOUTIQUE CREATIVE LABORATORY // NYC • LDN
-          </span>
-          <span class="hero_avail_tag">SELECTING 8 COMMISSIONS ANNUALLY</span>
+          <span class="editorial_meta">New York &amp; London</span>
+          <span class="editorial_meta">Brand &amp; Digital Design</span>
+          <span class="editorial_meta">Est. 2019</span>
         </div>
 
-        <!-- Oversized Mixed-Typography Headline -->
         <div class="hero_headline_wrap" id="heroHeadline">
           <h1 class="hero_headline">
             <span class="headline_mask">
-              <span class="headline_inner">WE CRAFT <span class="serif_italic">unforgettable</span></span>
+              <span class="headline_inner">We shape <span class="serif_italic">unforgettable</span></span>
             </span>
             <span class="headline_mask">
-              <span class="headline_inner">DIGITAL BRANDS THAT MAKE</span>
+              <span class="headline_inner">brands &amp; digital spaces</span>
             </span>
             <span class="headline_mask">
-              <span class="headline_inner">PEOPLE SAY <span class="oh_mark_wrap"><span class="oh_mark">OH!</span></span></span>
+              <span class="headline_inner">that make people say <span class="oh_mark_inline">OH!</span></span>
             </span>
           </h1>
         </div>
 
-        <!-- Hero Sub-Row: Descriptor + Dual Tactile CTAs -->
         <div class="hero_sub_row">
           <p class="hero_descriptor">
-            An independent art direction and digital engineering atelier. We forge high-resonance visual identities, bespoke Webflow and Framer flagships, and liquid motion systems for pioneers shaping modern culture.
+            OH! STUDIO is an independent design practice partnering with founders, fashion houses, and cultural
+            institutions on identity systems, bespoke websites, and motion.
           </p>
 
           <div class="hero_cta_group">
             <a href="#contact" class="btn_tactile btn_burgundy hero_btn_primary">
-              <span>Initiate Dialogue</span>
-              <span class="btn_arrow">↗</span>
+              <span>Start a Project</span>
+              <span class="btn_arrow" aria-hidden="true">↗</span>
             </a>
             <a href="#work" class="btn_tactile btn_outline_burgundy hero_btn_secondary">
-              <span>View Selected Work</span>
-              <span class="btn_arrow_down">↓</span>
+              <span>Selected Work</span>
+              <span class="btn_arrow_down" aria-hidden="true">↓</span>
             </a>
           </div>
         </div>
 
-        <!-- Full-Width Rounded 16:9 Showcase Frame -->
+        <!-- Full-Width Editorial Showcase Frame -->
         <div class="hero_showcase_wrap" id="heroShowcase">
-          <div class="showcase_frame">
-            <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1800&q=85" alt="OH! STUDIO Editorial Art Direction Showcase" class="showcase_media" id="showcaseMedia">
-            
+          <figure class="showcase_frame">
+            <img src="assets/hero-showcase.jpg"
+              alt="OH! STUDIO still life with burgundy cloth-bound portfolio, cotton cardstock swatches, and brass ruler on travertine"
+              class="showcase_media" id="showcaseMedia">
             <div class="showcase_overlay"></div>
-
-            <div class="showcase_corner_badge top_left">
-              <span class="badge_mono">REEL 2026 // 4K 60FPS</span>
-            </div>
-
-            <div class="showcase_center_trigger" id="showcasePlay">
-              <div class="trigger_circle">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <polygon points="6 4 20 12 6 20 6 4"></polygon>
-                </svg>
-              </div>
-              <span class="trigger_caption">EXPLORE SHOWCASE</span>
-            </div>
-
-            <div class="showcase_corner_badge bottom_right">
-              <span class="badge_mono">CLIENT SATISFACTION: 100%</span>
-            </div>
+          </figure>
+          <div class="showcase_caption_bar">
+            <span>Selected Archive 2024–2026</span>
+            <span>Identity · Webflow &amp; Framer · Motion Direction</span>
           </div>
         </div>
 
@@ -173,184 +161,168 @@
     </section>
 
     <!-- ==============================================
-         3. INVERTED BURGUNDY MARQUEE BAND (DRAMATIC CONTRAST)
+         3. INVERTED BURGUNDY MARQUEE BAND
          ============================================== -->
     <div class="section_marquee_burgundy" aria-hidden="true">
       <div class="marquee_track" id="marqueeTrack">
-        <span class="marquee_text">OH! STUDIO <span class="marquee_bullet">•</span> BRAND IDENTITY <span class="marquee_bullet">•</span> ART DIRECTION <span class="marquee_bullet">•</span> WEBFLOW &amp; FRAMER <span class="marquee_bullet">•</span> GSAP MOTION <span class="marquee_bullet">•</span> EDITORIAL EXCELLENCE <span class="marquee_bullet">•</span></span>
-        <span class="marquee_text">OH! STUDIO <span class="marquee_bullet">•</span> BRAND IDENTITY <span class="marquee_bullet">•</span> ART DIRECTION <span class="marquee_bullet">•</span> WEBFLOW &amp; FRAMER <span class="marquee_bullet">•</span> GSAP MOTION <span class="marquee_bullet">•</span> EDITORIAL EXCELLENCE <span class="marquee_bullet">•</span></span>
+        <span class="marquee_text">OH! STUDIO <span class="marquee_bullet">·</span> BRAND IDENTITY <span
+            class="marquee_bullet">·</span> ART DIRECTION <span class="marquee_bullet">·</span> WEBFLOW &amp; FRAMER
+          <span class="marquee_bullet">·</span> MOTION SYSTEMS <span class="marquee_bullet">·</span></span>
+        <span class="marquee_text">OH! STUDIO <span class="marquee_bullet">·</span> BRAND IDENTITY <span
+            class="marquee_bullet">·</span> ART DIRECTION <span class="marquee_bullet">·</span> WEBFLOW &amp; FRAMER
+          <span class="marquee_bullet">·</span> MOTION SYSTEMS <span class="marquee_bullet">·</span></span>
       </div>
     </div>
 
     <!-- ==============================================
-         4. SELECTED WORK (ASYMMETRIC EDITORIAL GRID)
+         4. SELECTED WORK (EDITORIAL GALLERY GRID)
          ============================================== -->
     <section class="section_work" id="work">
       <div class="container-large">
 
-        <!-- Work Section Header -->
         <div class="section_header_row">
           <div class="header_left">
-            <div class="section_num_tag">[ 01 // SELECTED WORK ]</div>
-            <h2 class="section_title">Work of Lasting Resonance.</h2>
+            <div class="section_num_tag">01 / Selected Work</div>
+            <h2 class="section_title">Recent <span class="serif_italic">commissions.</span></h2>
           </div>
-          <div class="work_filters" id="workFilters">
-            <button type="button" class="filter_btn active" data-filter="all">All (5)</button>
-            <button type="button" class="filter_btn" data-filter="brand">Identity</button>
-            <button type="button" class="filter_btn" data-filter="web">Webflow &amp; Framer</button>
-            <button type="button" class="filter_btn" data-filter="motion">Motion</button>
+          <div class="work_filters" id="workFilters" role="tablist" aria-label="Filter projects by discipline">
+            <button type="button" class="filter_btn active" data-filter="all" role="tab" aria-selected="true">All
+              (5)</button>
+            <button type="button" class="filter_btn" data-filter="brand" role="tab"
+              aria-selected="false">Identity</button>
+            <button type="button" class="filter_btn" data-filter="web" role="tab" aria-selected="false">Digital</button>
+            <button type="button" class="filter_btn" data-filter="motion" role="tab"
+              aria-selected="false">Motion</button>
           </div>
         </div>
 
-        <!-- Asymmetric Editorial Grid -->
         <div class="work_grid">
 
-          <!-- Card 1: AURA VÉGÉTALE -->
-          <article class="card_work card_wide" data-category="brand web">
+          <!-- Project 1 -->
+          <article class="card_work card_wide" data-category="brand web" data-project="maison-verre" tabindex="0"
+            role="button" aria-label="View case study: Maison Verre">
             <div class="work_media_frame">
-              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1400&q=85" alt="Aura Végétale Botanical Skincare Identity" class="work_img" data-parallax="true">
-              <div class="work_badge_year">2026</div>
-              <div class="work_hover_cta">
-                <span class="circle_arrow_btn">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                </span>
-              </div>
+              <img src="assets/work-maison-verre.jpg"
+                alt="Maison Verre smoked oxblood glass bottle and blind-embossed cream packaging on travertine"
+                class="work_img" data-parallax="true" loading="lazy">
             </div>
             <div class="work_details">
-              <div class="work_pills_row">
-                <span class="pill_tag">ART DIRECTION</span>
-                <span class="pill_tag">E-COMMERCE WEB</span>
-                <span class="pill_tag pill_tint">AWARDS SOTD</span>
+              <div class="work_top_meta">
+                <h3 class="work_title">Maison Verre</h3>
+                <span class="work_year">2026</span>
               </div>
-              <h3 class="work_title">AURA VÉGÉTALE</h3>
               <p class="work_desc">
-                Parisian botanical apothecary identity and tactile Webflow e-commerce experience crafted with liquid page transitions and bespoke packaging typography.
+                Packaging system, custom wordmark, and editorial commerce flagship for a Paris botanical formulation
+                house.
               </p>
               <div class="work_meta_row">
-                <span class="meta_client">Client: Maison de Beauté Paris</span>
-                <span class="meta_metric">+280% Pre-Orders</span>
+                <span class="meta_scope">Identity · Art Direction · Webflow</span>
+                <span class="meta_link">Read Case Study ↗</span>
               </div>
             </div>
           </article>
 
-          <!-- Card 2: KINETIC MONOLITH -->
-          <article class="card_work" data-category="web motion">
+          <!-- Project 2 -->
+          <article class="card_work" data-category="web motion" data-project="kunsthalle-basel" tabindex="0"
+            role="button" aria-label="View case study: Kunsthalle Archive">
             <div class="work_media_frame">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85" alt="Kinetic Monolith Architectural Archive" class="work_img" data-parallax="true">
-              <div class="work_badge_year">2026</div>
-              <div class="work_hover_cta">
-                <span class="circle_arrow_btn">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                </span>
-              </div>
+              <img src="assets/work-kunsthalle.jpg"
+                alt="Kunsthalle Archive minimalist limestone and burgundy plaster gallery with diagonal daylight"
+                class="work_img" data-parallax="true" loading="lazy">
             </div>
             <div class="work_details">
-              <div class="work_pills_row">
-                <span class="pill_tag">SPATIAL WEB</span>
-                <span class="pill_tag">GSAP CHOREO</span>
+              <div class="work_top_meta">
+                <h3 class="work_title">Kunsthalle Archive</h3>
+                <span class="work_year">2026</span>
               </div>
-              <h3 class="work_title">KINETIC MONOLITH</h3>
               <p class="work_desc">
-                Architectural pavilion and interactive spatial archive commissioned for Biennale Architettura, featuring 60fps smooth physics.
+                Digital exhibition index and spatial archive built for a contemporary architecture foundation in Zürich.
               </p>
               <div class="work_meta_row">
-                <span class="meta_client">Client: Studio Monolith Zürich</span>
-                <span class="meta_metric">Site of the Day</span>
+                <span class="meta_scope">Digital Flagship · Motion</span>
+                <span class="meta_link">Read Case Study ↗</span>
               </div>
             </div>
           </article>
 
-          <!-- Card 3: SOLARIS AUDIO -->
-          <article class="card_work" data-category="brand motion">
+          <!-- Project 3 -->
+          <article class="card_work" data-category="brand motion" data-project="braun-acoustic" tabindex="0"
+            role="button" aria-label="View case study: Vesper Audio">
             <div class="work_media_frame">
-              <img src="https://images.unsplash.com/photo-1546776310-eef45dd6d63c?auto=format&fit=crop&w=1200&q=85" alt="Solaris High Fidelity Sound Lab" class="work_img" data-parallax="true">
-              <div class="work_badge_year">2025</div>
-              <div class="work_hover_cta">
-                <span class="circle_arrow_btn">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                </span>
-              </div>
+              <img src="assets/work-vesper-audio.jpg"
+                alt="Vesper Audio brushed aluminum and matte oxblood rotary dial on cream linen" class="work_img"
+                data-parallax="true" loading="lazy">
             </div>
             <div class="work_details">
-              <div class="work_pills_row">
-                <span class="pill_tag">BRAND IDENTITY</span>
-                <span class="pill_tag">SOUND ARCHITECTURE</span>
+              <div class="work_top_meta">
+                <h3 class="work_title">Vesper Audio</h3>
+                <span class="work_year">2025</span>
               </div>
-              <h3 class="work_title">SOLARIS AUDIO</h3>
               <p class="work_desc">
-                Analog-inspired acoustic laboratory identity, generative vinyl slipcase packaging, and audio-reactive digital flagship.
+                Visual identity, hardware packaging, and interactive product launch for an independent Berlin acoustic
+                studio.
               </p>
               <div class="work_meta_row">
-                <span class="meta_client">Client: Solaris Acoustic Labs</span>
-                <span class="meta_metric">Custom Sound Synthesis</span>
+                <span class="meta_scope">Identity · Sound &amp; Motion</span>
+                <span class="meta_link">Read Case Study ↗</span>
               </div>
             </div>
           </article>
 
-          <!-- Card 4: ÉDITIONS NOIR -->
-          <article class="card_work" data-category="brand web">
+          <!-- Project 4 -->
+          <article class="card_work" data-category="brand web" data-project="editions-mare" tabindex="0" role="button"
+            aria-label="View case study: Éditions Maré">
             <div class="work_media_frame">
-              <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1200&q=85" alt="Éditions Noir Independent Publishing House" class="work_img" data-parallax="true">
-              <div class="work_badge_year">2025</div>
-              <div class="work_hover_cta">
-                <span class="circle_arrow_btn">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                </span>
-              </div>
+              <img src="assets/work-editions-mare.jpg"
+                alt="Éditions Maré open cream cotton monograph with deep burgundy linen spine on oak" class="work_img"
+                data-parallax="true" loading="lazy">
             </div>
             <div class="work_details">
-              <div class="work_pills_row">
-                <span class="pill_tag">EDITORIAL DESIGN</span>
-                <span class="pill_tag">EXPERIMENTAL TYPE</span>
+              <div class="work_top_meta">
+                <h3 class="work_title">Éditions Maré</h3>
+                <span class="work_year">2025</span>
               </div>
-              <h3 class="work_title">ÉDITIONS NOIR</h3>
               <p class="work_desc">
-                Swiss publishing catalog and interactive typography engine designed with strict grid discipline and micro-interactions.
+                Typographic system and print-to-web reading room for an independent art book publisher in Geneva.
               </p>
               <div class="work_meta_row">
-                <span class="meta_client">Client: Éditions Noir Genève</span>
-                <span class="meta_metric">TDC Typography Prize</span>
+                <span class="meta_scope">Editorial Type · Framer</span>
+                <span class="meta_link">Read Case Study ↗</span>
               </div>
             </div>
           </article>
 
-          <!-- Card 5: VALENCE ATELIER -->
-          <article class="card_work" data-category="web motion">
+          <!-- Project 5 -->
+          <article class="card_work" data-category="web motion" data-project="korsholm" tabindex="0" role="button"
+            aria-label="View case study: Korsholm Objects">
             <div class="work_media_frame">
-              <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=85" alt="Valence Atelier Industrial Furniture" class="work_img" data-parallax="true">
-              <div class="work_badge_year">2026</div>
-              <div class="work_hover_cta">
-                <span class="circle_arrow_btn">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                </span>
-              </div>
+              <img src="assets/work-korsholm.jpg"
+                alt="Korsholm Objects sculptural solid ash and brushed steel lounge chair in warm plaster studio"
+                class="work_img" data-parallax="true" loading="lazy">
             </div>
             <div class="work_details">
-              <div class="work_pills_row">
-                <span class="pill_tag">DESIGN TOKENS</span>
-                <span class="pill_tag">FRAMER ARCHITECTURE</span>
+              <div class="work_top_meta">
+                <h3 class="work_title">Korsholm Objects</h3>
+                <span class="work_year">2026</span>
               </div>
-              <h3 class="work_title">VALENCE ATELIER</h3>
               <p class="work_desc">
-                Post-industrial furniture design house identity and interactive 3D chair configurator with zero latency.
+                Digital showroom and material library for a Copenhagen furniture atelier working in solid ash and
+                brushed steel.
               </p>
               <div class="work_meta_row">
-                <span class="meta_client">Client: Valence Studio Copenhagen</span>
-                <span class="meta_metric">0.3s Lighthouse Speed</span>
+                <span class="meta_scope">Design System · Framer</span>
+                <span class="meta_link">Read Case Study ↗</span>
               </div>
             </div>
           </article>
 
         </div>
 
-        <!-- Archival Project Callout -->
-        <div class="work_archive_banner">
-          <div class="banner_text">
-            Looking for deeper case study documentation and our private design system archives?
-          </div>
-          <a href="#contact" class="btn_pill btn_burgundy">
-            <span>Request Private Portfolio</span>
-            <span>→</span>
+        <div class="work_archive_row">
+          <p class="archive_note">Full credentials deck and private client work available upon request.</p>
+          <a href="#contact" class="btn_pill btn_outline_burgundy">
+            <span>Request Credentials</span>
+            <span aria-hidden="true">→</span>
           </a>
         </div>
 
@@ -358,82 +330,90 @@
     </section>
 
     <!-- ==============================================
-         5. INVERTED BURGUNDY CAPABILITIES (FULL CONTRAST)
+         5. INVERTED BURGUNDY PRACTICE & CAPABILITIES
          ============================================== -->
     <section class="section_capabilities" id="services">
       <div class="container-large">
 
         <div class="section_header_inverted">
-          <div class="section_num_tag tag_cream">[ 02 // CAPABILITIES ]</div>
+          <div class="section_num_tag tag_cream">02 / Practice</div>
           <h2 class="section_title_inverted">
-            Uncompromising Discipline &amp; <span class="serif_italic_cream">Contemporary Vision.</span>
+            Disciplined craft across <span class="serif_italic_cream">brand and web.</span>
           </h2>
           <p class="section_desc_inverted">
-            We operate at the convergence of pure art direction and technical engineering. Every touchpoint is sculpted to command attention and endure trends.
+            Every commission is led directly by our founding partners—bridging strategic clarity, editorial typography,
+            and front-end engineering without handoff dilution.
           </p>
         </div>
 
-        <!-- 2x2 Capabilities Grid -->
-        <div class="capabilities_grid">
+        <div class="capabilities_index">
 
-          <!-- Capability 01 -->
-          <div class="capability_card">
-            <div class="cap_num">01</div>
-            <h3 class="cap_title">Brand Strategy &amp; Art Direction</h3>
-            <p class="cap_desc">
-              Excavating your definitive aesthetic positioning. We dismantle category conventions to architect identities that establish immediate cultural gravity.
-            </p>
-            <ul class="cap_list">
-              <li>Archetype Excavation &amp; Positioning</li>
-              <li>Editorial Art Direction &amp; Lookbooks</li>
-              <li>Tonal Guidelines &amp; Brand Philosophy</li>
-              <li>Curated Photography &amp; Film Direction</li>
-            </ul>
+          <div class="capability_row">
+            <div class="cap_index_num">01</div>
+            <div class="cap_main">
+              <h3 class="cap_title">Brand Strategy &amp; Direction</h3>
+              <p class="cap_desc">
+                Positioning, verbal identity, and art direction that give emerging and established companies a distinct
+                point of view.
+              </p>
+            </div>
+            <div class="cap_deliverables">
+              <span>Positioning</span>
+              <span>Art Direction</span>
+              <span>Messaging</span>
+              <span>Campaigns</span>
+            </div>
           </div>
 
-          <!-- Capability 02 -->
-          <div class="capability_card">
-            <div class="cap_num">02</div>
-            <h3 class="cap_title">Visual Identity &amp; Typography</h3>
-            <p class="cap_desc">
-              Obsessive typographic hierarchy, custom logomarks, and tactile physical collateral engineered to feel tangible both on paper and on glass.
-            </p>
-            <ul class="cap_list">
-              <li>Bespoke Logotypes &amp; Mark Systems</li>
-              <li>Expressive Display Type Pairings</li>
-              <li>Packaging, Boxes &amp; Tactile Print</li>
-              <li>Comprehensive Brand Token Guidelines</li>
-            </ul>
+          <div class="capability_row">
+            <div class="cap_index_num">02</div>
+            <div class="cap_main">
+              <h3 class="cap_title">Visual Identity &amp; Print</h3>
+              <p class="cap_desc">
+                Bespoke wordmarks, typographic hierarchies, packaging, and printed matter designed to hold up at any
+                scale.
+              </p>
+            </div>
+            <div class="cap_deliverables">
+              <span>Logotypes</span>
+              <span>Typography</span>
+              <span>Packaging</span>
+              <span>Guidelines</span>
+            </div>
           </div>
 
-          <!-- Capability 03 -->
-          <div class="capability_card">
-            <div class="cap_num">03</div>
-            <h3 class="cap_title">Bespoke Webflow &amp; Framer</h3>
-            <p class="cap_desc">
-              Production-grade Webflow Client-First and Framer systems. Scalable CMS structures, lightning 100/100 Core Web Vitals, and effortless client control.
-            </p>
-            <ul class="cap_list">
-              <li>Client-First Modular Code Conventions</li>
-              <li>Custom Dynamic CMS Taxonomies</li>
-              <li>Headless E-Commerce Integrations</li>
-              <li>Zero Layout Shift Responsive Layouts</li>
-            </ul>
+          <div class="capability_row">
+            <div class="cap_index_num">03</div>
+            <div class="cap_main">
+              <h3 class="cap_title">Webflow &amp; Framer Flagships</h3>
+              <p class="cap_desc">
+                Modular, client-maintainable websites built with clean architecture, responsive precision, and fast load
+                times.
+              </p>
+            </div>
+            <div class="cap_deliverables">
+              <span>Webflow</span>
+              <span>Framer</span>
+              <span>CMS Architecture</span>
+              <span>Commerce</span>
+            </div>
           </div>
 
-          <!-- Capability 04 -->
-          <div class="capability_card">
-            <div class="cap_num">04</div>
-            <h3 class="cap_title">Liquid GSAP Motion &amp; Systems</h3>
-            <p class="cap_desc">
-              Choreographed scroll-driven storytelling and tactile micro-interactions that feel as physical and satisfying as mechanical watch movements.
-            </p>
-            <ul class="cap_list">
-              <li>ScrollTrigger Narrative Choreography</li>
-              <li>Lenis Smooth Scroll Synchronization</li>
-              <li>Physics-Driven Magnetic Micro-Interactions</li>
-              <li>Accessible Motion &amp; Haptic Cues</li>
-            </ul>
+          <div class="capability_row">
+            <div class="cap_index_num">04</div>
+            <div class="cap_main">
+              <h3 class="cap_title">Motion &amp; Interaction</h3>
+              <p class="cap_desc">
+                Restrained scroll choreography and tactile interface feedback that clarify hierarchy and reward
+                attention.
+              </p>
+            </div>
+            <div class="cap_deliverables">
+              <span>GSAP Motion</span>
+              <span>Page Transitions</span>
+              <span>Micro-Interactions</span>
+              <span>Prototyping</span>
+            </div>
           </div>
 
         </div>
@@ -442,38 +422,44 @@
     </section>
 
     <!-- ==============================================
-         6. STUDIO ETHOS & STATS STRIP (CREAM CANVAS)
+         6. STUDIO ETHOS (CREAM CANVAS)
          ============================================== -->
     <section class="section_ethos" id="ethos">
       <div class="container-large">
 
-        <!-- Manifesto Lead -->
-        <div class="ethos_manifesto_box">
-          <div class="section_num_tag">[ 03 // STUDIO ETHOS ]</div>
-          <p class="ethos_quote">
-            “We believe digital spaces should possess the <span class="serif_italic">tactile dignity</span> of heavy printed cardstock and the kinetic vitality of cinema.”
-          </p>
-          <div class="ethos_author">— OH! STUDIO MANIFESTO, PARIS &amp; NEW YORK</div>
+        <div class="ethos_layout">
+          <div class="ethos_label_col">
+            <div class="section_num_tag">03 / Studio</div>
+          </div>
+          <div class="ethos_content_col">
+            <blockquote class="ethos_quote">
+              “Good digital work should carry the <span class="serif_italic">quiet weight</span> of heavy printed
+              paper—nothing decorative, nothing accidental.”
+            </blockquote>
+            <div class="ethos_attribution">OH! STUDIO — New York &amp; London</div>
+          </div>
         </div>
 
-        <!-- 3 Large Typographic Stat Counters -->
-        <div class="stats_strip">
-          <div class="stat_item">
-            <div class="stat_number" data-target="40" data-suffix="+">0</div>
-            <div class="stat_label">Global Brands Sculpted</div>
-            <p class="stat_sub">From seed-stage icons to established cultural luxury institutions.</p>
+        <div class="studio_facts_strip">
+          <div class="fact_item">
+            <div class="fact_value">40+</div>
+            <div class="fact_label">Commissions Shipped</div>
+            <p class="fact_sub">Across cultural institutions, independent consumer brands, and venture-backed software.
+            </p>
           </div>
 
-          <div class="stat_item">
-            <div class="stat_number" data-target="12" data-suffix="">0</div>
-            <div class="stat_label">Design Trophies &amp; Honors</div>
-            <p class="stat_sub">Awwwards Site of the Day, FWA of the Day, and Type Directors Club.</p>
+          <div class="fact_item">
+            <div class="fact_value">8 / yr</div>
+            <div class="fact_label">Selective Capacity</div>
+            <p class="fact_sub">We limit annual engagements so every project receives direct partner focus from day one.
+            </p>
           </div>
 
-          <div class="stat_item">
-            <div class="stat_number" data-target="100" data-suffix="%">0</div>
-            <div class="stat_label">Independent Craft</div>
-            <p class="stat_sub">No outsourced junior bloat. Direct principal collaboration from start to launch.</p>
+          <div class="fact_item">
+            <div class="fact_value">100%</div>
+            <div class="fact_label">Partner-Led</div>
+            <p class="fact_sub">The directors you meet on the first call are the people designing and building your
+              work.</p>
           </div>
         </div>
 
@@ -481,56 +467,56 @@
     </section>
 
     <!-- ==============================================
-         7. BOLD CLOSING CTA & MONUMENTAL FOOTER
+         7. CLOSING INQUIRY (INVERTED BURGUNDY)
          ============================================== -->
     <section class="section_cta" id="contact">
       <div class="container-large">
 
-        <!-- Inverted Burgundy CTA Box -->
         <div class="cta_inverted_box">
-          <div class="cta_corner_tag">[ INITIATE CONVERSATION ]</div>
+          <div class="cta_corner_tag">New Commissions</div>
 
           <h2 class="cta_headline">
-            READY TO MAKE THEM<br>SAY <span class="cta_serif_oh">OH!?</span>
+            Have a project<br>in <span class="cta_serif_oh">mind?</span>
           </h2>
 
           <p class="cta_text">
-            We take on 8 bespoke client commissions per year to ensure intense creative density. Tell us about your vision.
+            We are booking select identity and web engagements for Q2 and Q3. Share your email and scope—our partners
+            respond within one business day.
           </p>
 
-          <!-- Interactive Dialogue Form -->
-          <form class="cta_form" id="dialogueForm" onsubmit="event.preventDefault(); window.handleDialogueSubmit();">
-            <div class="form_scope_row">
+          <form class="cta_form" id="dialogueForm" name="inquiry" method="POST" data-netlify="true"
+            onsubmit="event.preventDefault(); window.handleDialogueSubmit();">
+            <input type="hidden" name="form-name" value="inquiry">
+            <div class="form_scope_row" role="radiogroup" aria-label="Project scope">
               <label class="scope_option">
-                <input type="radio" name="scope" value="Complete Rebrand" checked>
-                <span class="scope_label">✦ Complete Rebrand</span>
+                <input type="radio" name="scope" value="Brand Identity" checked>
+                <span class="scope_label">Brand Identity</span>
               </label>
               <label class="scope_option">
-                <input type="radio" name="scope" value="Digital Flagship (Webflow/Framer)">
-                <span class="scope_label">⚡ Digital Flagship</span>
+                <input type="radio" name="scope" value="Website (Webflow / Framer)">
+                <span class="scope_label">Website</span>
               </label>
               <label class="scope_option">
-                <input type="radio" name="scope" value="Art Direction & Motion">
-                <span class="scope_label">● Motion &amp; Systems</span>
+                <input type="radio" name="scope" value="Identity + Website">
+                <span class="scope_label">Full Engagement</span>
               </label>
             </div>
 
             <div class="form_input_row">
-              <input type="email" class="editorial_input" id="clientEmail" placeholder="your.name@company.com" required>
+              <label for="clientEmail" class="sr_only">Work email address</label>
+              <input type="email" class="editorial_input" id="clientEmail" placeholder="name@company.com" required>
               <button type="submit" class="btn_tactile btn_cream" id="submitBtn">
-                <span>Initiate Dialogue</span>
-                <span class="btn_arrow">→</span>
+                <span>Send Inquiry</span>
+                <span class="btn_arrow" aria-hidden="true">→</span>
               </button>
             </div>
-            <div class="form_feedback" id="formFeedback"></div>
+            <div class="form_feedback" id="formFeedback" role="status" aria-live="polite"></div>
           </form>
 
           <div class="cta_assurance_row">
-            <span>Direct Partner Access</span>
-            <span>•</span>
-            <span>24-Hour Confidential Response</span>
-            <span>•</span>
-            <span>Strict NDA Protocol</span>
+            <span>hello@ohstudio.design</span>
+            <span>·</span>
+            <span>New York &amp; London</span>
           </div>
         </div>
 
@@ -542,10 +528,9 @@
   <!-- ==============================================
        MONUMENTAL FOOTER
        ============================================== -->
-  <footer class="footer_monumental" id="studio">
+  <footer class="footer_monumental" id="footer">
     <div class="container-large">
 
-      <!-- Footer Columns -->
       <div class="footer_grid">
         <div class="footer_col brand_col">
           <div class="footer_logo">
@@ -553,79 +538,98 @@
             <span class="brand_title">STUDIO</span>
           </div>
           <p class="footer_bio">
-            An award-winning boutique atelier shaping high-resonance digital brands through editorial discipline and kinetic engineering.
+            Independent brand and digital design studio crafting identities, websites, and motion systems.
           </p>
-          <div class="footer_clock_pill">
-            <span class="clock_dot"></span>
-            <span id="nycClock">NYC 02:45 PM • AVAILABLE FOR COMMISSIONS</span>
+          <div class="footer_clock_line" id="nycClock">
+            New York — --:-- --
           </div>
         </div>
 
         <div class="footer_col">
-          <div class="footer_heading">INDEX</div>
+          <div class="footer_heading">Index</div>
           <ul class="footer_nav">
             <li><a href="#work">Selected Work</a></li>
-            <li><a href="#services">Our Capabilities</a></li>
-            <li><a href="#ethos">Studio Ethos</a></li>
-            <li><a href="#contact">Contact Atelier</a></li>
+            <li><a href="#services">Practice</a></li>
+            <li><a href="#ethos">Studio</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
 
         <div class="footer_col">
-          <div class="footer_heading">LOCATIONS</div>
+          <div class="footer_heading">Studios</div>
           <p class="footer_address">
-            <strong>NEW YORK</strong><br>
+            <strong>New York</strong><br>
             484 Broadway, Studio 4A<br>
             SoHo, NY 10013<br><br>
-            <strong>LONDON</strong><br>
+            <strong>London</strong><br>
             14 Redchurch Street<br>
             Shoreditch, E2 7DD
           </p>
         </div>
 
         <div class="footer_col">
-          <div class="footer_heading">NETWORK</div>
+          <div class="footer_heading">Connect</div>
           <ul class="footer_nav">
-            <li><a href="https://twitter.com" target="_blank" rel="noopener">Twitter / X ↗</a></li>
             <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram ↗</a></li>
-            <li><a href="https://awwwards.com" target="_blank" rel="noopener">Awwwards ↗</a></li>
-            <li><a href="https://readcv.com" target="_blank" rel="noopener">ReadCV ↗</a></li>
-            <li><a href="mailto:hello@ohstudio.creative" class="email_link">hello@ohstudio.creative</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener">X / Twitter ↗</a></li>
+            <li><a href="https://read.cv" target="_blank" rel="noopener">Read.cv ↗</a></li>
+            <li><a href="mailto:hello@ohstudio.design" class="email_link">hello@ohstudio.design</a></li>
           </ul>
         </div>
       </div>
 
-      <!-- Monumental Edge-to-Edge Wordmark -->
       <div class="monumental_wordmark_wrap" aria-hidden="true">
-        <h2 class="monumental_wordmark">OH! STUDIO</h2>
+        <svg class="footer_logo_svg" id="footerLogoSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 190" fill="none" role="img" aria-label="PABGOS! STUDIO">
+          <defs>
+            <!-- Reusable 5-point star for the exclamation dot -->
+            <polygon id="pabgos-star" points="0,-12 3.1,-4.3 11.4,-3.7 5,1.6 7.1,9.7 0,5.3 -7.1,9.7 -5,1.6 -11.4,-3.7 -3.1,-4.3" />
+            <!-- Reusable logo shapes so all 3 sticker layers align perfectly -->
+            <g id="pabgos-mark">
+              <text x="32" y="88" font-family="'Bricolage Grotesque', 'Arial Black', sans-serif" font-weight="800" font-size="76" letter-spacing="-3" transform="rotate(-1.5 200 60)">PABGOS</text>
+              <!-- Chunky tilted exclamation bar -->
+              <path d="M 358 24 L 380 28 L 369 65 L 352 62 Z" />
+              <!-- Star dot -->
+              <use href="#pabgos-star" transform="translate(358, 82) rotate(10)" />
+              <!-- Second line -->
+              <text x="46" y="162" font-family="'Bricolage Grotesque', 'Arial Black', sans-serif" font-weight="800" font-size="76" letter-spacing="-2">STUDIO</text>
+            </g>
+          </defs>
+
+          <!-- Layer 1: Outer Caramel Sticker Border -->
+          <use href="#pabgos-mark" stroke="#C48A5A" stroke-width="22" stroke-linejoin="round" stroke-linecap="round" />
+          <!-- Layer 2: Inner Cream Cutout Border -->
+          <use href="#pabgos-mark" stroke="#FAF6F0" stroke-width="11" stroke-linejoin="round" stroke-linecap="round" />
+          <!-- Layer 3: Core Espresso Fill -->
+          <use href="#pabgos-mark" fill="#2B1D17" />
+        </svg>
       </div>
 
-      <!-- Bottom Bar -->
       <div class="footer_bottom_bar">
         <div class="copyright_text">
-          © 2026 OH! STUDIO ATELIER. ALL RIGHTS RESERVED. CODED WITH GSAP 3 &amp; LENIS.
+          © 2026 OH! STUDIO. All rights reserved.
         </div>
         <button type="button" class="btn_pill btn_outline_burgundy back_to_top" id="backToTop">
-          <span>Back to Apex</span>
-          <span class="arrow_up">↑</span>
+          <span>Back to Top</span>
+          <span class="arrow_up" aria-hidden="true">↑</span>
         </button>
       </div>
 
     </div>
   </footer>
 
-  <!-- Confirmation Modal -->
+  <!-- Case Study & Inquiry Modal -->
   <div class="editorial_modal" id="dialogueModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
     <div class="modal_backdrop" id="modalBackdrop"></div>
     <div class="modal_box">
       <button type="button" class="modal_close" id="modalClose" aria-label="Close dialog">✕</button>
-      <div class="modal_mark">✦</div>
-      <h3 class="modal_title" id="modalTitle">SIGNAL ACKNOWLEDGED</h3>
+      <div class="modal_eyebrow" id="modalEyebrow">Inquiry Received</div>
+      <h3 class="modal_title" id="modalTitle">Thank you.</h3>
       <p class="modal_text" id="modalText">
-        Thank you. Our principals have received your communication. A private studio dossier and scheduling link have been dispatched to your inbox.
+        Our partners have received your note and will reply within one business day.
       </p>
+      <div class="modal_meta" id="modalMeta"></div>
       <button type="button" class="btn_tactile btn_burgundy modal_btn" id="modalDismiss">
-        <span>Understood</span>
+        <span>Close</span>
       </button>
     </div>
   </div>
@@ -638,4 +642,5 @@
   <!-- Production App Script -->
   <script src="script.js"></script>
 </body>
+
 </html>
