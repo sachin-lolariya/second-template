@@ -1,5 +1,5 @@
 /**
- * OH! STUDIO — Strict Two-Tone Editorial Creative Studio
+ * PABGOS! STUDIO — Strict Two-Tone Editorial Creative Studio
  * GSAP 3, ScrollTrigger & Lenis Smooth Scroll Orchestration
  */
 
@@ -526,7 +526,7 @@ document.addEventListener('DOMContentLoaded', () => {
       eyebrow: 'Inquiry Received',
       title: 'Thank you.',
       description: `We have received your note regarding ${scopeVal}. Our partners will reply to ${emailVal} within one business day.`,
-      meta: 'OH! STUDIO — New York & London',
+      meta: 'PABGOS! STUDIO — New York & London',
     });
 
     if (emailInput) emailInput.value = '';

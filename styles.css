@@ -1,5 +1,5 @@
 /* ==========================================================================
-   OH! STUDIO — STRICT TWO-TONE EDITORIAL DESIGN SYSTEM
+   PABGOS! STUDIO — STRICT TWO-TONE EDITORIAL DESIGN SYSTEM
    Framework: Webflow Client-First Architecture + Tactile CSS3
    ========================================================================== */
 
@@ -485,7 +485,7 @@ body.page-body {
   will-change: transform;
 }
 
-.oh_mark_inline {
+.brand_mark_inline {
   display: inline-block;
   background-color: var(--color-burgundy);
   color: var(--color-canvas-cream);
